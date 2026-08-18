@@ -1,0 +1,235 @@
+Install Laravel
+composer create-project laravel/laravel:^12.0 sufia-healthcare
+php artisan key:generate   
+
+Login System
+composer require laravel/breeze --dev
+php artisan breeze:install blade
+npm install
+npm run build
+php artisan migrate
+
+Middleware
+* php artisan make:middleware RoleMiddleware
+
+* File banegi: app/Http/Middleware/RoleMiddleware.php
+
+<?php
+
+namespace App\Http\Middleware;
+
+use Closure;
+use Illuminate\Http\Request;
+use Symfony\Component\HttpFoundation\Response;
+
+class RoleMiddleware
+{
+    public function handle(Request $request, Closure $next, $role): Response
+    {
+        if (!auth()->check()) {
+            return redirect('/login');
+        }
+
+        if ((int) auth()->user()->role !== (int) $role) {
+            abort(403, 'Unauthorized Access');
+        }
+
+        return $next($request);
+    }
+}
+
+* bootstrap/app.php
+
+<?php
+
+use Illuminate\Foundation\Application;
+use Illuminate\Foundation\Configuration\Exceptions;
+use Illuminate\Foundation\Configuration\Middleware;
+use App\Http\Middleware\RoleMiddleware;
+
+return Application::configure(basePath: dirname(__DIR__))
+    ->withRouting(
+        web: __DIR__.'/../routes/web.php',
+        commands: __DIR__.'/../routes/console.php',
+        health: '/up',
+    )
+    ->withMiddleware(function (Middleware $middleware): void {
+
+        $middleware->alias([
+            'role' => RoleMiddleware::class,
+        ]);
+
+    })
+    ->withExceptions(function (Exceptions $exceptions): void {
+        //
+    })->create();
+
+* Users table me role column add karo
+    php artisan make:migration add_role_to_users_table --table=users
+    1 = Admin
+    2 = User
+
+    <?php
+    use Illuminate\Database\Migrations\Migration;
+    use Illuminate\Database\Schema\Blueprint;
+    use Illuminate\Support\Facades\Schema;
+
+    return new class extends Migration
+    {
+        /**
+        * Run the migrations.
+        */
+        public function up(): void
+        {
+            Schema::table('users', function (Blueprint $table) {
+                $table->integer('role')->default(2)->after('password');
+            });
+        }
+
+        /**
+        * Reverse the migrations.
+        */
+        public function down(): void
+        {
+            Schema::table('users', function (Blueprint $table) {
+                $table->dropColumn('role');
+            });
+        }
+    };
+
+Make Api 
+
+php artisan install:api
+php artisan make:controller Api/AuthController
+app/Http/Controllers/Api/AuthController.php
+<?php
+
+namespace App\Http\Controllers\Api;
+
+use App\Http\Controllers\Controller;
+use App\Models\User;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Validation\ValidationException;
+
+class AuthController extends Controller
+{
+    public function register(Request $request)
+    {
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|unique:users,email',
+            'password' => 'required|min:6|confirmed',
+        ]);
+
+        $user = User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+            'role' => 2,
+        ]);
+
+        $token = $user->createToken('api-token')->plainTextToken;
+
+        return response()->json([
+            'status' => true,
+            'message' => 'Registration successful',
+            'data' => [
+                'user' => $user,
+                'token' => $token,
+            ],
+        ], 201);
+    }
+
+    public function login(Request $request)
+    {
+        $request->validate([
+            'email' => 'required|email',
+            'password' => 'required',
+        ]);
+
+        $user = User::where('email', $request->email)->first();
+
+        if (!$user || !Hash::check($request->password, $user->password)) {
+            throw ValidationException::withMessages([
+                'email' => ['Invalid credentials.'],
+            ]);
+        }
+
+        $user->tokens()->delete();
+
+        $token = $user->createToken('api-token')->plainTextToken;
+
+        return response()->json([
+            'status' => true,
+            'message' => 'Login successful',
+            'data' => [
+                'user' => $user,
+                'token' => $token,
+            ],
+        ]);
+    }
+
+    public function profile(Request $request)
+    {
+        return response()->json([
+            'status' => true,
+            'data' => $request->user(),
+        ]);
+    }
+
+    public function logout(Request $request)
+    {
+        $request->user()->currentAccessToken()->delete();
+
+        return response()->json([
+            'status' => true,
+            'message' => 'Logout successful',
+        ]);
+    }
+}
+
+Ab User.php check karo:
+
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
+use Laravel\Sanctum\HasApiTokens;
+
+class User extends Authenticatable
+{
+    use HasApiTokens, HasFactory, Notifiable;
+
+    protected $fillable = [
+        'name',
+        'email',
+        'password',
+        'role',
+    ];
+
+    protected $hidden = [
+        'password',
+        'remember_token',
+    ];
+
+    protected function casts(): array
+    {
+        return [
+            'email_verified_at' => 'datetime',
+            'password' => 'hashed',
+        ];
+    }
+}
+
+package install karo swagger
+
+composer require darkaonline/l5-swagger
+php artisan vendor:publish --provider "L5Swagger\L5SwaggerServiceProvider"
+php artisan l5-swagger:generate
+php artisan config:clear
+php artisan cache:clear
+php artisan l5-swagger:generate
