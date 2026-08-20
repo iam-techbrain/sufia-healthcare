@@ -233,3 +233,5 @@ php artisan l5-swagger:generate
 php artisan config:clear
 php artisan cache:clear
 php artisan l5-swagger:generate
+
+http://127.0.0.1:8000/api/documentation
