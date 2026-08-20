@@ -1,1 +1,912 @@
-<h1>Welcome to Sufia Healthcare</h1>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SUFIA Healthcare | Find a Doctor & Book Appointments Online</title>
+  <meta name="description"
+    content="A premium multi-specialty hospital platform. Find the right doctor, check real-time availability and book your appointment in minutes.">
+  <link rel="stylesheet" href="css/premium.css">
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.ico">
+</head>
+
+<body class="sf">
+
+  <!-- ================= TOP BAR ================= -->
+  <div class="topbar">
+    <div class="wrap">
+      <a href="emergency.html" class="tb-emergency">
+        <span class="tb-pulse"></span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <path
+            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+        </svg>
+        24×7 Emergency Helpline: +91 120 4200 400
+      </a>
+      <div class="tb-right">
+        <span>Mon–Sat · 8:00 AM – 9:00 PM</span>
+        <a href="patient-portal.html" class="tb-link-accent">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+            <circle cx="12" cy="7" r="4" />
+          </svg>
+          Patient Portal
+        </a>
+        <a href="contact.html">Locations & Directions</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= HEADER ================= -->
+  <header class="sf-header">
+    <div class="wrap nav-row">
+      <a href="index.html" class="brand" aria-label="Sufia Healthcare Homepage">
+        <img src="assets/img/logo-sufia.png" alt="Sufia Healthcare - Multi-Specialty Hospital">
+      </a>
+      <nav class="main-nav">
+        <a href="index.html" class="active">Home</a>
+        <a href="index.html#about">About</a>
+        <a href="doctors.html">Doctors</a>
+        <a href="specialities.html">Departments</a>
+        <a href="index.html#packages">Health Packages</a>
+        <a href="emergency.html" style="color:var(--coral-600);font-weight:700;">Emergency</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="nav-cta">
+        <a href="login.html" class="nav-login">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4" />
+            <polyline points="10 17 15 12 10 7" />
+            <line x1="15" y1="12" x2="3" y2="12" />
+          </svg>
+          Login
+        </a>
+        <a href="appointment.html" class="btn btn-cyan btn-sm">Book Appointment</a>
+        <button class="burger" aria-label="Toggle Navigation Menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow">NABH Accredited · Multi-Specialty Care</span>
+        <h1>Find the right doctor,<br><em>right when you need one.</em></h1>
+        <p class="lead">Sufia brings 50+ specialists, real-time availability and a booking journey that takes minutes —
+          not phone calls — to one trusted hospital platform.</p>
+        <div class="hero-ctas">
+          <a href="doctors.html" class="btn btn-primary">Find a Doctor</a>
+          <a href="appointment.html" class="btn btn-outline">Book an Appointment</a>
+        </div>
+        <div class="hero-quickstats">
+          <div class="hqs-item"><b>50+</b><span>Consulting Doctors</span></div>
+          <div class="hqs-item"><b>22</b><span>Specialities</span></div>
+          <div class="hqs-item"><b>25 Yrs</b><span>Of Trusted Care</span></div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hv-float-badge">
+          <span class="dot"></span>
+          <div><b>Dr. Mohammed Muntazir</b></div>
+        </div>
+        <div class="hv-frame">
+          <!-- <img src="assets/img/doctor-checkup-patient.jpg" alt="Doctor examining a patient at Sufia Healthcare"> -->
+          <img src="assets/img/dr_mohammed_muntazir.jpg" alt="Doctor examining a patient at Sufia Healthcare">
+        </div>
+        <div class="hv-caption">
+          <b>100k+</b>
+          <span>Patients cared for across our centres</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Signature ticket / token search card -->
+    <div class="wrap ticket-wrap">
+      <div class="ticket">
+        <div class="ticket-search ticket-notch">
+          <div class="ticket-search-top">
+            <div>
+              <h3>Search doctor, speciality or condition</h3>
+              <span style="font-size:0.82rem;color:var(--slate);">Real‑time slots across all Sufia branches</span>
+            </div>
+          </div>
+          <div class="ticket-tabs">
+            <span class="ticket-tab active">By Doctor / Speciality</span>
+            <span class="ticket-tab" onclick="window.location.href='appointment.html'">Health Packages</span>
+            <span class="ticket-tab" onclick="window.location.href='specialities.html'">Departments</span>
+          </div>
+          <form class="search-field" action="doctors.html" method="get">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#647186" stroke-width="2">
+              <circle cx="11" cy="11" r="7" />
+              <path d="m21 21-4.3-4.3" />
+            </svg>
+            <input type="text" name="q" placeholder="e.g. Cardiologist, Dr. Rahul Sharma, Knee Pain">
+            <button type="submit" class="btn btn-cyan btn-sm">Search</button>
+          </form>
+          <div class="chip-row">
+            <span class="chip on">Available Today</span>
+            <span class="chip">Available Tomorrow</span>
+            <span class="chip">Morning</span>
+            <span class="chip">Evening</span>
+          </div>
+        </div>
+
+        <div class="ticket-divider"></div>
+
+        <div class="ticket-status">
+          <div class="ts-live"><span class="pulse"></span> Live availability</div>
+          <div class="ts-row"><span>Doctors online now</span><b>34</b></div>
+          <div class="ts-row"><span>Slots open today</span><b>212</b></div>
+          <div class="ts-row"><span>Avg. wait for OPD</span><b>9 min</b></div>
+          <a href="emergency.html" class="btn btn-coral btn-block btn-sm">Emergency Assistance</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= TRUST STRIP ================= -->
+  <div class="trust-strip">
+    <div class="wrap">
+      <div class="trust-item"><span class="ti-ico">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 22s8-4.5 8-11.8V5l-8-3-8 3v5.2C4 17.5 12 22 12 22Z" />
+          </svg></span>NABH & ISO Certified</div>
+      <div class="trust-item"><span class="ti-ico">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="9" />
+            <path d="M12 7v5l3 3" />
+          </svg></span>24×7 Emergency Care</div>
+      <div class="trust-item"><span class="ti-ico">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20 6 9 17l-5-5" />
+          </svg></span>Verified Specialists Only</div>
+      <div class="trust-item"><span class="ti-ico">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="4" width="18" height="18" rx="2" />
+            <path d="M16 2v4M8 2v4M3 10h18" />
+          </svg></span>Instant Slot Confirmation</div>
+      <div class="trust-item"><span class="ti-ico">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="2" y="5" width="20" height="14" rx="2" />
+            <path d="M2 10h20" />
+          </svg></span>Secure Online Payments</div>
+    </div>
+  </div>
+
+  <!-- ================= ABOUT ================= -->
+  <section class="sf-section" id="about">
+    <div class="wrap grid grid-2" style="align-items:center;gap:60px;">
+      <div>
+        <span class="eyebrow">About Sufia Super Speciality Hospital</span>
+        <h2 style="font-size:clamp(1.6rem,3vw,2.3rem);margin-top:12px;">High-quality, accessible & reliable healthcare
+          services</h2>
+        <p style="color:var(--slate);margin-top:18px;">Sufia Super Speciality Hospital is dedicated to delivering
+          high-quality, accessible, and reliable medical services. Equipped with advanced infrastructure and
+          state-of-the-art medical facilities, the focus is on accurate diagnosis and effective treatment across a wide
+          range of health conditions.</p>
+        <p style="color:var(--slate);margin-top:12px;">With a patient-first approach, efficiency, and attention, every
+          effort is made to ensure a safe, comfortable, and well-managed healthcare experience for patients and their
+          families.</p>
+        <p style="color:var(--slate);margin-top:12px;">We are committed to maintaining high standards in treatment and
+          patient care, the aim is to provide the best healthcare services that people can trust.</p>
+
+        <div
+          style="margin-top:20px;padding:16px;background:var(--cyan-50);border-radius:var(--radius-md);border-left:4px solid var(--cyan-500);font-size:0.88rem;color:var(--navy-900);">
+          <strong>📍 Address:</strong> Hussaini More, Bindusar, Siwan, Bihar 841227<br>
+          <strong>✉️ Email:</strong> info@sufiahealthcare.com
+        </div>
+
+        <a href="contact.html" class="btn btn-outline" style="margin-top:24px;">Visit Our Campus</a>
+      </div>
+      <div class="grid" style="grid-template-columns:1.2fr 1fr;gap:18px;">
+        <div class="fac-card" style="aspect-ratio:3/4.6;"><img src="assets/img/doctor-team-group.jpg"
+            alt="Sufia Healthcare specialist team"></div>
+        <div class="grid" style="gap:18px;">
+          <div class="fac-card" style="aspect-ratio:1/1;"><img src="assets/img/doctor-consult-smiling.jpg"
+              alt="Doctor consultation"></div>
+          <div class="fac-card" style="aspect-ratio:1/1;"><img src="assets/img/mri-scan-room.jpg"
+              alt="MRI diagnostics suite"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= DEPARTMENTS ================= -->
+  <section class="sf-section on-mist" id="departments">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Our Departments</span>
+        <h2>Twenty-two departments. One coordinated care team.</h2>
+        <p>From routine consultations to complex procedures, find the exact specialist you need.</p>
+      </div>
+      <div class="grid grid-4">
+        <div class="dept-card">
+          <div class="dept-ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2">
+              <path
+                d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8Z" />
+            </svg></div>
+          <h4>Cardiology</h4>
+          <p>Heart screening, interventional cardiology and cardiac rehab.</p>
+          <a href="appointment.html?dept=Cardiology" class="dept-link">Book a doctor →</a>
+        </div>
+        <div class="dept-card">
+          <div class="dept-ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2">
+              <path
+                d="M9.5 2A4.5 4.5 0 0 0 5 6.5v.55a3.5 3.5 0 0 0-1 6.6 4 4 0 0 0 3.5 5.85h.5a3 3 0 0 0 3-3V6a4 4 0 0 0-1.5-4Z" />
+              <path
+                d="M14.5 2A4.5 4.5 0 0 1 19 6.5v.55a3.5 3.5 0 0 1 1 6.6 4 4 0 0 1-3.5 5.85H16a3 3 0 0 1-3-3V6a4 4 0 0 1 1.5-4Z" />
+            </svg></div>
+          <h4>Neurology</h4>
+          <p>Brain, spine and nervous system diagnosis and treatment.</p>
+          <a href="appointment.html?dept=Neurology" class="dept-link">Book a doctor →</a>
+        </div>
+        <div class="dept-card">
+          <div class="dept-ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2">
+              <path d="M17 4a3 3 0 0 0-3 3v1.2L8.5 13.7a3 3 0 1 0 1.8 1.8L15.8 10H17a3 3 0 1 0 0-6Z" />
+              <circle cx="6" cy="18" r="3" />
+            </svg></div>
+          <h4>Orthopaedics</h4>
+          <p>Joint replacement, sports injury and spine care.</p>
+          <a href="appointment.html?dept=Orthopaedics" class="dept-link">Book a doctor →</a>
+        </div>
+        <div class="dept-card">
+          <div class="dept-ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2">
+              <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7Z" />
+              <circle cx="12" cy="12" r="3" />
+            </svg></div>
+          <h4>Ophthalmology</h4>
+          <p>Cataract, LASIK and comprehensive eye care.</p>
+          <a href="appointment.html?dept=Ophthalmology" class="dept-link">Book a doctor →</a>
+        </div>
+        <div class="dept-card">
+          <div class="dept-ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2">
+              <path d="M2 12h4l2 6 4-14 2 8h8" />
+            </svg></div>
+          <h4>ENT</h4>
+          <p>Ear, nose and throat conditions for all ages.</p>
+          <a href="appointment.html?dept=ENT" class="dept-link">Book a doctor →</a>
+        </div>
+        <div class="dept-card">
+          <div class="dept-ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2">
+              <path d="M12 3c-3 3-6 5.5-6 9.5A6 6 0 0 0 12 19a6 6 0 0 0 6-6.5C18 8.5 15 6 12 3Z" />
+            </svg></div>
+          <h4>Dermatology</h4>
+          <p>Skin, hair and cosmetic dermatology treatments.</p>
+          <a href="appointment.html?dept=Dermatology" class="dept-link">Book a doctor →</a>
+        </div>
+        <div class="dept-card">
+          <div class="dept-ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2">
+              <path d="M6 3v6a6 6 0 0 0 12 0V3" />
+              <path d="M12 15v6M9 21h6" />
+            </svg></div>
+          <h4>General Medicine</h4>
+          <p>Everyday health concerns and preventive checkups.</p>
+          <a href="appointment.html?dept=General%20Medicine" class="dept-link">Book a doctor →</a>
+        </div>
+        <div class="dept-card">
+          <div class="dept-ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2">
+              <circle cx="12" cy="8" r="5" />
+              <path d="M20 21a8 8 0 0 0-16 0" />
+            </svg></div>
+          <h4>Gynaecology</h4>
+          <p>Women's health, maternity and fertility care.</p>
+          <a href="appointment.html?dept=Gynaecology" class="dept-link">Book a doctor →</a>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:36px;"><a href="specialities.html" class="btn btn-outline">View All
+          Departments</a></div>
+    </div>
+  </section>
+
+  <!-- ================= OFFICIAL SCOPE OF SERVICES ================= -->
+  <section class="sf-section" id="scope-of-services">
+    <div class="wrap">
+
+      <div class="sec-head text-center" style="max-width:820px;margin:0 auto 48px;">
+        <span class="eyebrow" style="background:var(--cyan-50);color:var(--cyan-600);">OFFICIAL CLINICAL SCOPE & CARE
+          PATHWAY</span>
+        <h2 style="margin-top:8px;">Comprehensive Scope of Healthcare Services</h2>
+        <p>Full breakdown of inpatient, outpatient, emergency, surgical, ICU, diagnostic, and cashless insurance
+          services as certified by Sufia Healthcare Pvt. Ltd.</p>
+
+        <!-- Care Pathway Strip -->
+        <div
+          style="background:var(--navy-900);color:#ffffff;padding:16px 20px;border-radius:var(--radius-md);margin-top:20px;font-size:0.84rem;font-weight:600;display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;box-shadow:var(--shadow-md);">
+          <span style="color:var(--cyan-400);">Integrated Care Pathway:</span>
+          <span>OPD</span> ➔ <span>Diagnostics</span> ➔ <span>Emergency</span> ➔ <span>Inpatient Care</span> ➔
+          <span>Surgery</span> ➔ <span>ICU/NICU/PICU</span> ➔ <span>Discharge & Follow-up</span>
+        </div>
+
+        <div style="margin-top:20px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+          <a href="Sufia_Healthcare_Scope_of_Services.pdf" target="_blank" class="btn btn-cyan btn-sm"
+            style="display:inline-flex;align-items:center;gap:8px;">
+            📄 Download Scope of Services (PDF)
+          </a>
+          <a href="Sufia_Healthcare_Scope_of_Services.txt" target="_blank" class="btn btn-outline btn-sm"
+            style="display:inline-flex;align-items:center;gap:8px;">
+            📝 View Scope of Services (TXT)
+          </a>
+        </div>
+      </div>
+
+      <div class="grid grid-3">
+
+        <!-- 1. Clinical & Medical -->
+        <div class="dept-card" style="border-top:4px solid var(--cyan-500);">
+          <div class="dept-ico">🩺</div>
+          <h4>1. Clinical & OPD Services</h4>
+          <ul style="font-size:0.86rem;color:var(--slate);list-style:none;padding:0;margin-top:12px;line-height:1.7;">
+            <li>✓ <strong>Obstetrics & Gynaecology:</strong> Antenatal/postnatal care, high-risk pregnancy, normal &
+              C-section deliveries, gynaec surgeries.</li>
+            <li>✓ <strong>General Surgery:</strong> Emergency & elective procedures, abdominal/GI, hernia, appendicitis,
+              gallbladder & wound care.</li>
+            <li>✓ <strong>Paediatric Care:</strong> General OPD, infections, growth & developmental monitoring,
+              vaccination guidance.</li>
+            <li>✓ <strong>Urology Services:</strong> Kidney & urinary stones, UTI management, prostate care, urological
+              surgical procedures.</li>
+          </ul>
+        </div>
+
+        <!-- 2. Critical Care & Emergency -->
+        <div class="dept-card" style="border-top:4px solid var(--coral-500);">
+          <div class="dept-ico" style="background:var(--coral-50);color:var(--coral-600);">🚑</div>
+          <h4>2. Emergency & Critical Care</h4>
+          <ul style="font-size:0.86rem;color:var(--slate);list-style:none;padding:0;margin-top:12px;line-height:1.7;">
+            <li>✓ <strong>24×7 Trauma Unit:</strong> Triage assessment, acute trauma resuscitation, interdepartmental OT
+              & ICU transfer.</li>
+            <li>✓ <strong>ICU (Intensive Care Unit):</strong> Continuous hemodynamic & respiratory support for
+              critically ill patients.</li>
+            <li>✓ <strong>NICU (Neonatal ICU):</strong> Premature & low-birth-weight newborn stabilization & intensive
+              monitoring.</li>
+            <li>✓ <strong>PICU (Paediatric ICU):</strong> Specialized paediatric critical care & post-operative
+              recovery.</li>
+          </ul>
+        </div>
+
+        <!-- 3. Surgical & OT Infrastructure -->
+        <div class="dept-card" style="border-top:4px solid var(--navy-900);">
+          <div class="dept-ico" style="background:var(--mist);color:var(--navy-900);">🏥</div>
+          <h4>3. Surgical & OT Facilities</h4>
+          <ul style="font-size:0.86rem;color:var(--slate);list-style:none;padding:0;margin-top:12px;line-height:1.7;">
+            <li>✓ <strong>3 Modular Operation Theatres (OTs):</strong> Equipped for elective & emergency surgeries with
+              HEPA filtration.</li>
+            <li>✓ <strong>Pre & Post-Op Care:</strong> Comprehensive surgical evaluation, anaesthesia support, recovery
+              suites.</li>
+            <li>✓ <strong>Specialized IPD Wards:</strong> Dedicated inpatient hospitalization units & continuous nursing
+              care.</li>
+            <li>✓ <strong>In-House Dietary Services:</strong> Customized clinical nutrition & patient meal plans
+              according to medical protocols.</li>
+          </ul>
+        </div>
+
+        <!-- 4. Radiology & Diagnostics -->
+        <div class="dept-card" style="border-top:4px solid var(--cyan-500);">
+          <div class="dept-ico">🩻</div>
+          <h4>4. Radiology & Diagnostic Imaging</h4>
+          <ul style="font-size:0.86rem;color:var(--slate);list-style:none;padding:0;margin-top:12px;line-height:1.7;">
+            <li>✓ <strong>24×7 CT Scan Facility:</strong> Round-the-clock CT imaging for emergency, trauma, ICU, OPD &
+              surgical patients.</li>
+            <li>✓ <strong>24×7 Diagnostic Radiology:</strong> Digital X-ray examinations & Ultrasonography (USG).</li>
+            <li>✓ <strong>Pre-Op & Emergency Imaging:</strong> Immediate radiologist reporting & diagnostic evaluation.
+            </li>
+          </ul>
+        </div>
+
+        <!-- 5. Laboratory & Pharmacy -->
+        <div class="dept-card" style="border-top:4px solid var(--cyan-500);">
+          <div class="dept-ico">🧪</div>
+          <h4>5. Laboratory & Pharmacy</h4>
+          <ul style="font-size:0.86rem;color:var(--slate);list-style:none;padding:0;margin-top:12px;line-height:1.7;">
+            <li>✓ <strong>In-House Pathology Lab:</strong> Hematology, Biochemistry, Clinical Pathology & Serology.</li>
+            <li>✓ <strong>Emergency Lab Testing:</strong> Instant blood & urine investigations for ICU, NICU, PICU &
+              Emergency.</li>
+            <li>✓ <strong>24×7 In-House Pharmacy:</strong> Round-the-clock prescribed medicine dispensing for OPD & IPD.
+            </li>
+          </ul>
+        </div>
+
+        <!-- 6. Cashless TPA & Safety -->
+        <div class="dept-card" style="border-top:4px solid var(--gold);">
+          <div class="dept-ico" style="background:#fffbe6;color:var(--gold);">🛡️</div>
+          <h4>6. Cashless TPA & Quality Standards</h4>
+          <ul style="font-size:0.86rem;color:var(--slate);list-style:none;padding:0;margin-top:12px;line-height:1.7;">
+            <li>✓ <strong>Insurance & TPA Cashless Helpdesk:</strong> Pre-authorization filing, query resolution & claim
+              processing.</li>
+            <li>✓ <strong>Quality & Safety Protocols:</strong> NABH safety guidelines, infection control & strict
+              patient data privacy.</li>
+            <li>✓ <strong>Discharge & Follow-Up Care:</strong> Structured post-discharge documentation & specialist
+              follow-up planning.</li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= MEET OUR DOCTORS ================= -->
+  <section class="sf-section" id="doctors">
+    <div class="wrap">
+      <div
+        style="display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;margin-bottom:44px;">
+        <div class="section-head" style="margin-bottom:0;">
+          <span class="eyebrow">Meet Our Doctors</span>
+          <h2>Specialists with real, live availability</h2>
+        </div>
+        <a href="doctors.html" class="btn btn-outline">Explore All Doctors →</a>
+      </div>
+
+      <div class="grid grid-3">
+        <div class="doctor-card">
+          <div class="dc-photo">
+            <img src="assets/img/doctor-consult-smiling.jpg" alt="Dr. Rahul Sharma">
+            <span class="dc-avail"><span class="dot"></span> Today</span>
+            <span class="dc-rating">4.9 ★</span>
+          </div>
+          <div class="dc-body">
+            <div class="dc-name">Dr. Rahul Sharma</div>
+            <div class="dc-role">MBBS, MD · Consultant Cardiologist</div>
+            <div class="dc-meta">
+              <div class="dc-meta-item"><b>15+</b> yrs exp</div>
+              <div class="dc-meta-item"><b>₹900</b> fee</div>
+              <div class="dc-meta-item">Main Hospital</div>
+            </div>
+          </div>
+          <div class="dc-slip">
+            <div class="dc-slip-row"><span>Next available</span><b>Today · 4:30 PM</b></div>
+            <div class="dc-slip-actions">
+              <a href="doctors.html" class="btn btn-outline btn-sm" style="flex:1;">View Profile</a>
+              <a href="appointment.html?doctor=Dr.%20Rahul%20Sharma" class="btn btn-primary btn-sm" style="flex:1;">Book
+                Now</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="doctor-card">
+          <div class="dc-photo">
+            <img src="assets/img/doctor-checkup-patient.jpg" alt="Dr. Arvind Menon">
+            <span class="dc-avail"><span class="dot"></span> Tomorrow</span>
+            <span class="dc-rating">4.8 ★</span>
+          </div>
+          <div class="dc-body">
+            <div class="dc-name">Dr. Arvind Menon</div>
+            <div class="dc-role">MBBS, DNB · Orthopaedic Surgeon</div>
+            <div class="dc-meta">
+              <div class="dc-meta-item"><b>18+</b> yrs exp</div>
+              <div class="dc-meta-item"><b>₹1,100</b> fee</div>
+              <div class="dc-meta-item">Sufia Central</div>
+            </div>
+          </div>
+          <div class="dc-slip">
+            <div class="dc-slip-row"><span>Next available</span><b>Tomorrow · 11:00 AM</b></div>
+            <div class="dc-slip-actions">
+              <a href="doctors.html" class="btn btn-outline btn-sm" style="flex:1;">View Profile</a>
+              <a href="appointment.html?doctor=Dr.%20Arvind%20Menon" class="btn btn-primary btn-sm" style="flex:1;">Book
+                Now</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="doctor-card">
+          <div class="dc-photo">
+            <img src="assets/img/doctor-patient-hands.jpg" alt="Dr. Meera Iyer">
+            <span class="dc-avail"><span class="dot"></span> Today</span>
+            <span class="dc-rating">5.0 ★</span>
+          </div>
+          <div class="dc-body">
+            <div class="dc-name">Dr. Meera Iyer</div>
+            <div class="dc-role">MBBS, MS · Obstetrics & Gynaecology</div>
+            <div class="dc-meta">
+              <div class="dc-meta-item"><b>12+</b> yrs exp</div>
+              <div class="dc-meta-item"><b>₹800</b> fee</div>
+              <div class="dc-meta-item">Main Hospital</div>
+            </div>
+          </div>
+          <div class="dc-slip">
+            <div class="dc-slip-row"><span>Next available</span><b>Today · 6:00 PM</b></div>
+            <div class="dc-slip-actions">
+              <a href="doctors.html" class="btn btn-outline btn-sm" style="flex:1;">View Profile</a>
+              <a href="appointment.html?doctor=Dr.%20Meera%20Iyer" class="btn btn-primary btn-sm" style="flex:1;">Book
+                Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= WHY CHOOSE US ================= -->
+  <section class="sf-section on-mist">
+    <div class="wrap grid grid-2" style="gap:60px;align-items:center;">
+      <div class="fac-card" style="aspect-ratio:4/5;">
+        <img src="assets/img/doctor-writing-notes.jpg" alt="Sufia Healthcare clinical team">
+      </div>
+      <div>
+        <span class="eyebrow">Why Choose Sufia</span>
+        <h2 style="font-size:clamp(1.6rem,3vw,2.3rem);margin-top:12px;">Care built around outcomes, not just
+          appointments</h2>
+        <div style="margin-top:20px;">
+          <div class="why-card">
+            <div class="why-num">01</div>
+            <div>
+              <h4>Experienced Doctors</h4>
+              <p>Every specialist is credential-verified with an average of 14+ years in practice.</p>
+            </div>
+          </div>
+          <div class="why-card">
+            <div class="why-num">02</div>
+            <div>
+              <h4>Modern Infrastructure</h4>
+              <p>Robotic surgery, CyberKnife radiotherapy and 3T MRI under one roof.</p>
+            </div>
+          </div>
+          <div class="why-card">
+            <div class="why-num">03</div>
+            <div>
+              <h4>24×7 Emergency Response</h4>
+              <p>Level-1 trauma care with a 4-minute average door-to-doctor time.</p>
+            </div>
+          </div>
+          <div class="why-card">
+            <div class="why-num">04</div>
+            <div>
+              <h4>Patient-Centric Booking</h4>
+              <p>Real-time slots, transparent fees and no waiting-room surprises.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FACILITIES ================= -->
+  <section class="sf-section" id="facilities">
+    <div class="wrap">
+      <div class="section-head center" style="margin-left:auto;margin-right:auto;">
+        <span class="eyebrow">Hospital Facilities</span>
+        <h2>Advanced infrastructure, built for precision care</h2>
+      </div>
+      <div class="grid grid-4">
+        <div class="fac-card"><img src="assets/img/ct-scan-room.jpg" alt="CT Scan suite">
+          <div class="fac-overlay">
+            <div><b>CT & Imaging</b><span>128-slice diagnostics</span></div>
+          </div>
+        </div>
+        <div class="fac-card"><img src="assets/img/mri-scan-room.jpg" alt="MRI suite">
+          <div class="fac-overlay">
+            <div><b>MRI Suite</b><span>3T high-field scanning</span></div>
+          </div>
+        </div>
+        <div class="fac-card"><img src="assets/img/davinci-surgical.jpg" alt="Robotic surgery system">
+          <div class="fac-overlay">
+            <div><b>Robotic OT</b><span>da Vinci-assisted surgery</span></div>
+          </div>
+        </div>
+        <div class="fac-card"><img src="assets/img/cyberknife-room.jpg" alt="CyberKnife radiosurgery">
+          <div class="fac-overlay">
+            <div><b>Radiosurgery</b><span>CyberKnife precision therapy</span></div>
+          </div>
+        </div>
+        <div class="fac-card"><img src="assets/img/lab-microscope.jpg" alt="Diagnostic laboratory">
+          <div class="fac-overlay">
+            <div><b>Laboratory</b><span>NABL-accredited diagnostics</span></div>
+          </div>
+        </div>
+        <div class="fac-card"><img src="assets/img/radiologist-xray.jpg" alt="Radiology reporting">
+          <div class="fac-overlay">
+            <div><b>Radiology</b><span>Same-day reporting</span></div>
+          </div>
+        </div>
+        <div class="fac-card"><img src="assets/img/care-nurse-elderly.jpg" alt="Patient care ward">
+          <div class="fac-overlay">
+            <div><b>Patient Care Wards</b><span>Round-the-clock nursing</span></div>
+          </div>
+        </div>
+        <div class="fac-card"><img src="assets/img/doctor-patient-hands.jpg" alt="OPD consultation">
+          <div class="fac-overlay">
+            <div><b>OPD & Emergency</b><span>Fast-track consultations</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= STATS ================= -->
+  <section class="sf-section on-navy tight">
+    <div class="wrap">
+      <div class="stats-row">
+        <div class="stat-item"><b>25+</b><span>Years of Excellence</span></div>
+        <div class="stat-item"><b>50+</b><span>Doctors</span></div>
+        <div class="stat-item"><b>22+</b><span>Specialities</span></div>
+        <div class="stat-item"><b>1L+</b><span>Patients Served</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= HEALTH PACKAGES ================= -->
+  <section class="sf-section on-mist" id="packages">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Health Packages</span>
+        <h2>Preventive care, packaged for convenience</h2>
+        <p>Curated screening bundles reviewed by our specialists — book online and walk in.</p>
+      </div>
+      <div class="grid grid-4">
+        <div class="pkg-card">
+          <span class="pkg-eyebrow">Essentials</span>
+          <h4>Basic Health Check</h4>
+          <div class="pkg-price">₹1,499</div>
+          <ul class="pkg-list">
+            <li>Full blood count</li>
+            <li>Blood sugar & lipid profile</li>
+            <li>Physician consultation</li>
+          </ul>
+          <a href="appointment.html?package=Basic%20Health%20Check" class="btn btn-outline btn-block">Book Now</a>
+        </div>
+        <div class="pkg-card">
+          <span class="pkg-eyebrow">Cardiac</span>
+          <h4>Heart Health Package</h4>
+          <div class="pkg-price">₹3,299</div>
+          <ul class="pkg-list">
+            <li>ECG & 2D Echo</li>
+            <li>Lipid profile</li>
+            <li>Cardiologist review</li>
+          </ul>
+          <a href="appointment.html?package=Heart%20Health%20Package" class="btn btn-outline btn-block">Book Now</a>
+        </div>
+        <div class="pkg-card">
+          <span class="pkg-eyebrow">Metabolic</span>
+          <h4>Diabetes Screening</h4>
+          <div class="pkg-price">₹1,899</div>
+          <ul class="pkg-list">
+            <li>HbA1c & fasting glucose</li>
+            <li>Kidney function panel</li>
+            <li>Endocrinologist review</li>
+          </ul>
+          <a href="appointment.html?package=Diabetes%20Screening" class="btn btn-outline btn-block">Book Now</a>
+        </div>
+        <div class="pkg-card">
+          <span class="pkg-eyebrow">Senior Care</span>
+          <h4>Senior Citizen Package</h4>
+          <div class="pkg-price">₹4,499</div>
+          <ul class="pkg-list">
+            <li>Full body screening</li>
+            <li>Bone density scan</li>
+            <li>Geriatric consultation</li>
+          </ul>
+          <a href="appointment.html?package=Senior%20Citizen%20Package" class="btn btn-outline btn-block">Book Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= TESTIMONIALS ================= -->
+  <section class="sf-section">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Patient Stories</span>
+        <h2>Trusted by families across the region</h2>
+      </div>
+      <div class="grid grid-3">
+        <div class="test-card">
+          <div class="test-stars">★★★★★</div>
+          <p class="test-quote">Booking took under three minutes and I got a same-day slot with a cardiologist. The
+            whole experience felt effortless.</p>
+          <div class="test-person">
+            <div class="test-avatar">A</div>
+            <div><b>Anita Verma</b><span>Cardiology patient</span></div>
+          </div>
+        </div>
+        <div class="test-card">
+          <div class="test-stars">★★★★★</div>
+          <p class="test-quote">The staff explained every step of my father's knee surgery clearly. We always knew what
+            was happening and why.</p>
+          <div class="test-person">
+            <div class="test-avatar">R</div>
+            <div><b>Rohit Nair</b><span>Orthopaedics, patient family</span></div>
+          </div>
+        </div>
+        <div class="test-card">
+          <div class="test-stars">★★★★★</div>
+          <p class="test-quote">From my first scan to the final report, everything was on time. The patient dashboard
+            made tracking appointments simple.</p>
+          <div class="test-person">
+            <div class="test-avatar">S</div>
+            <div><b>Sana Khan</b><span>Diagnostics patient</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= BLOG ================= -->
+  <section class="sf-section on-mist" id="blog">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Health Articles</span>
+        <h2>Guidance from our specialists</h2>
+      </div>
+      <div class="grid grid-3">
+        <div class="blog-card">
+          <div class="blog-img"><img src="assets/img/doctor-checkup-patient.jpg" alt="Heart health article"></div>
+          <div class="blog-body">
+            <span class="blog-cat">Cardiology</span>
+            <h4>Five early warning signs of heart disease you shouldn't ignore</h4>
+            <p>Simple checks that can catch cardiac risk factors months before symptoms appear.</p>
+            <a href="#" class="blog-read">Read More →</a>
+          </div>
+        </div>
+        <div class="blog-card">
+          <div class="blog-img"><img src="assets/img/lab-microscope.jpg" alt="Diagnostics article"></div>
+          <div class="blog-body">
+            <span class="blog-cat">Diagnostics</span>
+            <h4>What your annual blood panel actually tells your doctor</h4>
+            <p>A plain-language guide to reading your lab report before your next consultation.</p>
+            <a href="#" class="blog-read">Read More →</a>
+          </div>
+        </div>
+        <div class="blog-card">
+          <div class="blog-img"><img src="assets/img/care-nurse-elderly.jpg" alt="Senior care article"></div>
+          <div class="blog-body">
+            <span class="blog-cat">Senior Care</span>
+            <h4>Building a preventive health routine after 60</h4>
+            <p>What to screen for, how often, and which specialists to keep on your team.</p>
+            <a href="#" class="blog-read">Read More →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= EMERGENCY ================= -->
+  <section class="sf-section tight">
+    <div class="wrap">
+      <div class="emergency-banner">
+        <div>
+          <span class="eyebrow on-dark coral">24×7 Emergency</span>
+          <h3>Need emergency assistance?</h3>
+          <p>Our trauma and critical care team is on standby around the clock.</p>
+          <span class="emergency-phone">Emergency Helpline: +91 120 4200 400</span>
+        </div>
+        <a href="tel:+911204200400" class="btn btn-coral">Call Emergency</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CONTACT ================= -->
+  <section class="sf-section on-mist" id="contact">
+    <div class="wrap grid grid-2" style="gap:56px;align-items:center;">
+      <div>
+        <span class="eyebrow">Visit Us</span>
+        <h2 style="font-size:clamp(1.6rem,3vw,2.2rem);margin-top:12px;">Find your nearest Sufia campus</h2>
+        <div class="why-card">
+          <div class="why-num"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2">
+              <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg></div>
+          <div>
+            <h4>Address</h4>
+            <p>Sufia Healthcare, MG Road, Patna, Bihar 800001</p>
+          </div>
+        </div>
+        <div class="why-card">
+          <div class="why-num"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2">
+              <path
+                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+            </svg></div>
+          <div>
+            <h4>Phone & Email</h4>
+            <p>+91 120 4200 400 · care@sufiahealthcare.in</p>
+          </div>
+        </div>
+        <div class="why-card">
+          <div class="why-num"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2">
+              <circle cx="12" cy="12" r="9" />
+              <path d="M12 7v5l3 3" />
+            </svg></div>
+          <div>
+            <h4>Visiting Hours</h4>
+            <p>OPD: 8:00 AM – 9:00 PM · Emergency: 24×7</p>
+          </div>
+        </div>
+        <a href="contact.html" class="btn btn-primary" style="margin-top:20px;">Get Directions</a>
+      </div>
+      <div class="fac-card" style="aspect-ratio:4/3.2;">
+        <img src="assets/img/doctor-team-group.jpg" alt="Sufia Healthcare campus">
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="sf-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-brand-img">
+            <img src="assets/img/logo-sufia.png" alt="Sufia Healthcare">
+          </div>
+          <p style="margin-bottom:10px;">Sufia Super Speciality Hospital is dedicated to delivering high-quality,
+            accessible, and reliable medical services.</p>
+          <div style="font-size:0.83rem;color:#a9b8cc;display:grid;gap:4px;">
+            <div>📍 Hussaini More, Bindusar, Siwan, Bihar 841227</div>
+            <div>✉️ info@sufiahealthcare.com</div>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h5>Patient Care</h5>
+          <ul>
+            <li><a href="doctors.html">Find a Doctor</a></li>
+            <li><a href="appointment.html">Book Appointment</a></li>
+            <li><a href="specialities.html">Departments</a></li>
+            <li><a href="patient-portal.html">Track Booking</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Portal Access</h5>
+          <ul>
+            <li><a href="login.html">Patient Login</a></li>
+            <li><a href="login.html">Doctor OPD Portal</a></li>
+            <li><a href="login.html">Staff Console</a></li>
+            <li><a href="login.html">Admin Dashboard</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Emergency & Contact</h5>
+          <ul>
+            <li><a href="emergency.html">24x7 Ambulance</a></li>
+            <li><a href="emergency.html">Trauma Care Center</a></li>
+            <li><a href="contact.html">Hospital Location</a></li>
+            <li><a href="contact.html">Enquiry Desk</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Location : Sufia Memorial Hospital</h5>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d916230.243349504!2d83.14606817812499!3d26.22839709999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3992fc054a98385b%3A0x2f0715d2b6ddf3fb!2sSufia%20Memorial%20Hospital!5e0!3m2!1sen!2sin!4v1787139858578!5m2!1sen!2sin"
+            width="280" height="130" style="border:0; border-radius:14px; box-shadow: 0 4px 14px rgba(0,0,0,0.25);"
+            allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2026 Sufia Healthcare. All rights reserved.</div>
+        <div>Sufia Healthcare Super Specialty Hospital</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mobile sticky booking bar -->
+  <div class="mobile-book-bar">
+    <a href="doctors.html" class="btn btn-outline">Find Doctor</a>
+    <a href="appointment.html" class="btn btn-cyan">Book Appointment</a>
+  </div>
+
+  <script>
+    document.querySelectorAll('.sf-section').forEach(s => s.classList.add('reveal'));
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+    document.querySelector('.burger')?.addEventListener('click', () => {
+      const nav = document.querySelector('.main-nav');
+      nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+      nav.style.cssText += 'flex-direction:column;position:absolute;top:100%;left:0;right:0;background:#fff;padding:20px 28px;border-bottom:1px solid var(--line);';
+    });
+  </script>
+</body>
+
+</html>

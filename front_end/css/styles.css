@@ -1,0 +1,1223 @@
+/* ==========================================================================
+   SUFIA HEALTHCARE - WORLD-CLASS SUPER SPECIALITY HOSPITAL PORTAL STYLESHEET
+   Design System: Modern Corporate Medical Architecture (Navy, Teal, Crimson, Gold)
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+:root {
+  /* Primary Corporate Palette */
+  --healthcare-navy-dark: #091322;
+  --healthcare-navy: #0f172a;
+  --healthcare-navy-light: #1e293b;
+
+  --mgm-navy-dark: var(--healthcare-navy-dark);
+  --mgm-navy: var(--healthcare-navy);
+  --mgm-navy-light: var(--healthcare-navy-light);
+
+  /* Brand Teal & Cyan Accents */
+  --healthcare-teal: #008080;
+  --healthcare-teal-dark: #006666;
+  --healthcare-teal-light: #e6f5f5;
+  --healthcare-cyan: #0284c7;
+  --healthcare-cyan-light: #e0f2fe;
+
+  --mgm-teal: var(--healthcare-teal);
+  --mgm-teal-dark: var(--healthcare-teal-dark);
+  --mgm-teal-light: var(--healthcare-teal-light);
+  --mgm-cyan: var(--healthcare-cyan);
+  --mgm-cyan-light: var(--healthcare-cyan-light);
+
+  /* Emergency & Accent Colors */
+  --healthcare-red: #e11d48;
+  --healthcare-red-dark: #be123c;
+  --healthcare-red-light: #fff1f2;
+
+  --mgm-red: var(--healthcare-red);
+  --mgm-red-dark: var(--healthcare-red-dark);
+  --mgm-red-light: var(--healthcare-red-light);
+
+  --healthcare-gold: #d97706;
+  --healthcare-gold-light: #fffbe6;
+  --healthcare-green: #16a34a;
+  --healthcare-green-light: #f0fdf4;
+
+  --mgm-gold: var(--healthcare-gold);
+  --mgm-gold-light: var(--healthcare-gold-light);
+  --mgm-green: var(--healthcare-green);
+  --mgm-green-light: var(--healthcare-green-light);
+
+  /* Neutral Surface Colors */
+  --bg-main: #f8fafc;
+  --bg-card: #ffffff;
+  --text-primary: #0f172a;
+  --text-secondary: #334155;
+  --text-muted: #64748b;
+  --border-color: #e2e8f0;
+  --border-focus: #008080;
+
+  /* UI Tokens */
+  --radius-xs: 6px;
+  --radius-sm: 10px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-pill: 9999px;
+
+  /* Elevation Shadows */
+  --shadow-subtle: 0 4px 20px rgba(15, 23, 42, 0.03);
+  --shadow-sm: 0 4px 12px rgba(15, 23, 42, 0.05);
+  --shadow-md: 0 10px 30px rgba(15, 23, 42, 0.08);
+  --shadow-lg: 0 20px 40px rgba(15, 23, 42, 0.12);
+  --shadow-glow: 0 0 25px rgba(0, 128, 128, 0.25);
+  --shadow-glow-red: 0 0 25px rgba(225, 29, 72, 0.35);
+
+  --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--text-primary);
+  background-color: var(--bg-main);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  color: var(--healthcare-navy);
+  letter-spacing: -0.02em;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition);
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+}
+
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ==========================================================================
+   TOP EMERGENCY BAR & HEADER NAVIGATION
+   ========================================================================== */
+.header-top-banner {
+  background: linear-gradient(90deg, #991b1b 0%, #be123c 50%, #e11d48 100%);
+  color: #ffffff;
+  padding: 8px 0;
+  font-size: 0.85rem;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(153, 27, 27, 0.2);
+}
+
+.header-top-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.header-location-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.header-top-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.btn-emergency-pill {
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  padding: 4px 16px;
+  border-radius: var(--radius-pill);
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: var(--transition);
+}
+
+.btn-emergency-pill:hover {
+  background: #ffffff;
+  color: var(--healthcare-red-dark);
+  box-shadow: var(--shadow-glow-red);
+}
+
+/* Sticky Main Navigation Navbar */
+.medanta-header,
+.navbar {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: var(--shadow-sm);
+}
+
+.header-nav,
+.nav-inner {
+  height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand-title,
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: var(--healthcare-navy);
+  text-decoration: none;
+  transition: transform 0.25s ease;
+}
+
+.brand-title:hover,
+.brand-logo:hover {
+  transform: translateY(-1px);
+}
+
+.brand-title img,
+.brand-logo img {
+  height: 44px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.brand-icon-wrap {
+  width: 44px;
+  height: 44px;
+  background: linear-gradient(135deg, var(--healthcare-teal) 0%, #00b4b4 100%);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 1.5rem;
+  box-shadow: var(--shadow-glow);
+}
+
+.brand-title-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-name {
+  font-family: 'Outfit', sans-serif;
+  letter-spacing: -0.5px;
+  line-height: 1.1;
+  font-size: 1.3rem;
+  font-weight: 800;
+}
+
+.brand-name span {
+  color: var(--healthcare-teal);
+}
+
+.logo-badge {
+  font-size: 0.68rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--healthcare-teal);
+  background: var(--healthcare-teal-light);
+  padding: 2px 8px;
+  border-radius: 4px;
+  display: inline-block;
+  margin-top: 2px;
+}
+
+.nav-menu,
+.nav-links {
+  display: flex;
+  gap: 28px;
+  list-style: none;
+  align-items: center;
+}
+
+.nav-menu a,
+.nav-links a {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  position: relative;
+  padding: 8px 0;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active,
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--healthcare-teal);
+}
+
+.nav-menu a.active::after,
+.nav-links a.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--healthcare-teal);
+  border-radius: 3px;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* ==========================================================================
+   BUTTONS & UI UTILITIES
+   ========================================================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: var(--radius-pill);
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+  transition: var(--transition);
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--healthcare-teal) 0%, #00b4b4 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(0, 128, 128, 0.35);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 128, 128, 0.45);
+}
+
+.btn-danger {
+  background: linear-gradient(135deg, var(--healthcare-red) 0%, #be123c 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(225, 29, 72, 0.35);
+}
+
+.btn-danger:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(225, 29, 72, 0.45);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--healthcare-teal);
+  border: 2px solid var(--healthcare-teal);
+}
+
+.btn-outline:hover {
+  background: var(--healthcare-teal-light);
+}
+
+.badge-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ==========================================================================
+   MEGA HERO SECTION WITH MULTI-SEARCH HUB
+   ========================================================================== */
+.hero-gradient-box {
+  background: linear-gradient(135deg, #091322 0%, #0f172a 50%, #1e293b 100%);
+  color: #ffffff;
+  padding: 64px 0 100px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-gradient-box::before {
+  content: '';
+  position: absolute;
+  top: -200px;
+  right: -200px;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(0, 128, 128, 0.25) 0%, rgba(0,0,0,0) 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: ambientPulse 8s infinite alternate;
+}
+
+@keyframes ambientPulse {
+  0% { transform: scale(1); opacity: 0.6; }
+  100% { transform: scale(1.15); opacity: 0.9; }
+}
+
+.hero-welcome {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.hero-welcome h1 {
+  font-size: 3.2rem;
+  color: #ffffff;
+  line-height: 1.15;
+  margin-bottom: 12px;
+  letter-spacing: -1px;
+}
+
+.hero-welcome p {
+  color: #94a3b8;
+  font-size: 1.15rem;
+  max-width: 640px;
+}
+
+.hero-stats-pills {
+  display: flex;
+  gap: 16px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.stat-pill {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 8px 18px;
+  border-radius: var(--radius-pill);
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #e2e8f0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Floating Search Card */
+.floating-search-card {
+  background: #ffffff;
+  border-radius: var(--radius-xl);
+  padding: 32px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  color: var(--text-primary);
+  margin-top: 10px;
+  position: relative;
+  z-index: 10;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.search-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.search-card-header h3 {
+  font-size: 1.4rem;
+  color: var(--healthcare-navy);
+}
+
+.search-card-tabs {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 12px;
+  overflow-x: auto;
+}
+
+.search-card-tab {
+  padding: 10px 20px;
+  border-radius: var(--radius-pill);
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: var(--transition);
+  white-space: nowrap;
+}
+
+.search-card-tab.active,
+.search-card-tab:hover {
+  background: var(--healthcare-teal-light);
+  color: var(--healthcare-teal);
+}
+
+.search-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-input-wrapper input {
+  width: 100%;
+  padding: 18px 20px 18px 56px;
+  border-radius: var(--radius-lg);
+  border: 2px solid var(--border-color);
+  font-size: 1.05rem;
+  outline: none;
+  transition: var(--transition);
+  background: #f8fafc;
+}
+
+.search-input-wrapper input:focus {
+  border-color: var(--healthcare-teal);
+  background: #ffffff;
+  box-shadow: 0 0 0 4px rgba(0, 128, 128, 0.15);
+}
+
+.search-input-wrapper .search-icon {
+  position: absolute;
+  left: 20px;
+  font-size: 1.3rem;
+  color: var(--text-muted);
+}
+
+/* Dropdown Results Overlay */
+.search-results-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  right: 0;
+  background: #ffffff;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border-color);
+  max-height: 380px;
+  overflow-y: auto;
+  z-index: 100;
+  display: none;
+}
+
+.search-results-dropdown.active {
+  display: block;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.search-result-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 20px;
+  border-bottom: 1px solid #f1f5f9;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.search-result-item:last-child {
+  border-bottom: none;
+}
+
+.search-result-item:hover {
+  background: var(--healthcare-teal-light);
+}
+
+.search-result-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.search-result-title {
+  font-weight: 700;
+  color: var(--healthcare-navy);
+  font-size: 0.98rem;
+}
+
+.search-result-sub {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+/* ==========================================================================
+   SERVICES & CLINICAL CARDS GRID
+   ========================================================================== */
+.services-section {
+  padding: 60px 0;
+}
+
+.services-title {
+  font-size: 1.5rem;
+  margin-bottom: 24px;
+  color: var(--healthcare-navy);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.service-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.service-box {
+  background: #ffffff;
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.service-box:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--healthcare-teal);
+}
+
+.service-box-icon {
+  width: 52px;
+  height: 52px;
+  background: var(--healthcare-teal-light);
+  color: var(--healthcare-teal);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  margin-bottom: 16px;
+}
+
+.service-box-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--healthcare-navy);
+  margin-bottom: 6px;
+}
+
+.service-box-sub {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+
+/* ==========================================================================
+   MEDANTA/APOLLO-GRADE DOCTOR CARD WITH REAL-TIME SLOT PICKER
+   ========================================================================== */
+.section {
+  padding: 60px 0;
+}
+
+.medanta-doctor-card {
+  background: #ffffff;
+  border-radius: var(--radius-xl);
+  padding: 28px;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 24px;
+  transition: var(--transition);
+}
+
+.medanta-doctor-card:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--healthcare-teal);
+}
+
+.doc-card-main {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.doc-avatar-wrap {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.doc-avatar-img {
+  width: 120px;
+  height: 120px;
+  border-radius: var(--radius-lg);
+  object-fit: cover;
+  border: 3px solid var(--healthcare-teal-light);
+}
+
+.doc-badge-rating {
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #0f172a;
+  color: #f59e0b;
+  font-weight: 800;
+  font-size: 0.75rem;
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+  box-shadow: var(--shadow-sm);
+  white-space: nowrap;
+}
+
+.doc-details {
+  flex: 1;
+}
+
+.doc-name {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--healthcare-navy);
+  margin-bottom: 4px;
+}
+
+.doc-title {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+
+}
+
+.doc-meta-pills {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.doc-meta-item {
+  font-size: 0.85rem;
+  font-weight: 700;
+  background: #f1f5f9;
+  padding: 4px 12px;
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+}
+
+.doc-branch-bar {
+  background: var(--healthcare-teal-light);
+  color: var(--healthcare-teal-dark);
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 8px 14px;
+  border-radius: var(--radius-sm);
+  margin-bottom: 16px;
+  display: inline-block;
+}
+
+.doc-slot-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  border-top: 1px dashed var(--border-color);
+  padding-top: 16px;
+}
+
+.slot-pill-btn {
+  background: #ffffff;
+  border: 1.5px solid var(--border-color);
+  color: var(--text-primary);
+  padding: 8px 16px;
+  border-radius: var(--radius-pill);
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.slot-pill-btn:hover,
+.slot-pill-btn.primary-slot {
+  background: var(--healthcare-teal);
+  color: #ffffff;
+  border-color: var(--healthcare-teal);
+  box-shadow: 0 4px 12px rgba(0, 128, 128, 0.25);
+}
+
+/* ==========================================================================
+   CLINICAL EXCELLENCE & LIVE TRACKER
+   ========================================================================== */
+.section-title {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 48px;
+}
+
+.section-title h2 {
+  font-size: 2.2rem;
+  margin-top: 8px;
+  margin-bottom: 12px;
+}
+
+.section-title p {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 28px;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: var(--radius-xl);
+  padding: 32px;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--healthcare-teal);
+}
+
+.card-icon {
+  width: 60px;
+  height: 60px;
+  background: var(--healthcare-teal-light);
+  color: var(--healthcare-teal);
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+.card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+
+}
+
+.card p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 24px;
+}
+
+/* 24/7 ICU Live Tracker */
+.tracker-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  text-align: center;
+}
+
+.tracker-item {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 24px;
+  border-radius: var(--radius-lg);
+}
+
+.tracker-number {
+  font-family: 'Outfit', sans-serif;
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #38bdf8;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.tracker-label {
+  font-size: 0.9rem;
+  color: #cbd5e1;
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   BOOKING MODAL DRAWER & RECEIPT TICKET
+   ========================================================================== */
+.booking-drawer-modal,
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(8px);
+  z-index: 2000;
+  display: flex;
+  justify-content: flex-end;
+  opacity: 0;
+  pointer-events: none;
+  transition: var(--transition);
+}
+
+.booking-drawer-modal.active,
+.modal-backdrop.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.drawer-content,
+.modal-content {
+  width: 100%;
+  max-width: 580px;
+  height: 100%;
+  background: #ffffff;
+  padding: 32px;
+  overflow-y: auto;
+  box-shadow: -10px 0 40px rgba(0, 0, 0, 0.2);
+  transform: translateX(100%);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.booking-drawer-modal.active .drawer-content {
+  transform: translateX(0);
+}
+
+.modal-content {
+  margin: auto;
+  height: auto;
+  max-height: 90vh;
+  border-radius: var(--radius-xl);
+  transform: translateY(20px);
+}
+
+.modal-backdrop.active .modal-content {
+  transform: translateY(0);
+}
+
+.drawer-tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 24px;
+  background: #f1f5f9;
+  padding: 4px;
+  border-radius: var(--radius-pill);
+}
+
+.drawer-tab-btn {
+  flex: 1;
+  text-align: center;
+  padding: 10px;
+  border-radius: var(--radius-pill);
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: pointer;
+  color: var(--text-muted);
+  transition: var(--transition);
+}
+
+.drawer-tab-btn.active {
+  background: var(--healthcare-teal);
+  color: #ffffff;
+  box-shadow: var(--shadow-sm);
+}
+
+.slot-day-selector {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.slot-day-card {
+  border: 1.5px solid var(--border-color);
+  padding: 12px;
+  border-radius: var(--radius-md);
+  text-align: center;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.slot-day-card.active,
+.slot-day-card:hover {
+  border-color: var(--healthcare-teal);
+  background: var(--healthcare-teal-light);
+}
+
+.slot-day-name {
+  font-weight: 800;
+  font-size: 0.95rem;
+  color: var(--healthcare-navy);
+}
+
+.slot-day-count {
+  font-size: 0.75rem;
+  color: var(--healthcare-teal);
+  font-weight: 700;
+}
+
+.time-slots-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.time-slot-btn {
+  padding: 10px 14px;
+  border: 1.5px solid var(--border-color);
+  border-radius: var(--radius-md);
+  background: #ffffff;
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: pointer;
+  text-align: center;
+  transition: var(--transition);
+}
+
+.time-slot-btn:hover,
+.time-slot-btn.selected {
+  background: var(--healthcare-navy);
+  color: #ffffff;
+  border-color: var(--healthcare-navy);
+}
+
+.branch-slot-box {
+  background: #f8fafc;
+  border: 1.5px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.branch-slot-box:hover {
+  border-color: var(--healthcare-teal);
+  background: #ffffff;
+  box-shadow: var(--shadow-sm);
+}
+
+.branch-name {
+  font-weight: 700;
+  color: var(--healthcare-navy);
+  font-size: 0.95rem;
+}
+
+.branch-avail {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+/* Digital Receipt Pass Box */
+.receipt-box {
+  background: #f8fafc;
+  border: 2px dashed var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  margin-top: 16px;
+}
+
+.receipt-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 12px;
+  margin-bottom: 16px;
+}
+
+.receipt-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 0.92rem;
+}
+
+/* ==========================================================================
+   FLOATING QUICK ACTION DOCK (BOTTOM RIGHT)
+   ========================================================================== */
+.floating-quick-widget {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 1500;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-end;
+}
+
+.floating-action-btn {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  color: #ffffff;
+  padding: 12px 20px;
+  border-radius: var(--radius-pill);
+  font-size: 0.9rem;
+  font-weight: 800;
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: var(--transition);
+}
+
+.floating-action-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+.floating-action-btn.red-emergency {
+  background: linear-gradient(135deg, #e11d48 0%, #be123c 100%);
+  box-shadow: var(--shadow-glow-red);
+}
+
+/* ==========================================================================
+   FORM CONTROLS
+   ========================================================================== */
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--healthcare-navy);
+  margin-bottom: 6px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: var(--radius-md);
+  border: 1.5px solid var(--border-color);
+  font-size: 0.95rem;
+  outline: none;
+  transition: var(--transition);
+}
+
+.form-control:focus {
+  border-color: var(--healthcare-teal);
+  box-shadow: 0 0 0 3px rgba(0, 128, 128, 0.15);
+}
+
+/* ==========================================================================
+   GLOBAL FOOTER
+   ========================================================================== */
+footer {
+  background: var(--healthcare-navy-dark);
+  color: #ffffff;
+  padding: 64px 0 32px;
+  margin-top: 60px;
+  border-top: 4px solid var(--healthcare-teal);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  gap: 40px;
+  margin-bottom: 48px;
+}
+
+.footer-brand h4 {
+  font-size: 1.5rem;
+  color: #ffffff;
+  margin-bottom: 12px;
+}
+
+.footer-brand p {
+  color: #94a3b8;
+  font-size: 0.92rem;
+  line-height: 1.7;
+}
+
+.footer-col h5 {
+  color: #ffffff;
+  font-size: 1.1rem;
+  margin-bottom: 16px;
+}
+
+.footer-links {
+  list-style: none;
+  display: grid;
+  gap: 10px;
+}
+
+.footer-links a {
+  color: #94a3b8;
+  font-size: 0.92rem;
+}
+
+.footer-links a:hover {
+  color: #38bdf8;
+  padding-left: 4px;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  color: #64748b;
+  font-size: 0.88rem;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN
+   ========================================================================== */
+@media (max-width: 992px) {
+  .hero-welcome h1 { font-size: 2.4rem; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 768px) {
+  .header-nav { height: auto; padding: 16px 0; flex-wrap: wrap; gap: 16px; }
+  .nav-menu { display: none; }
+  .doc-card-main { flex-direction: column; }
+  .doc-avatar-img { width: 100px; height: 100px; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .drawer-content { max-width: 100%; }
+}
