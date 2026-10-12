@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patient Portal & Consultation Token Lookup | Sufia Healthcare</title>
+  <meta name="description"
+    content="Access patient portal, lookup appointment status using Reference ID, download digital consultation slips and manage bookings online.">
+  <link rel="stylesheet" href="css/premium.css">
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.ico">
+</head>
+
+<body class="sf">
+
+  <!-- ================= TOP BAR ================= -->
+  <div class="topbar">
+    <div class="wrap">
+      <a href="emergency.html" class="tb-emergency">
+        <span class="tb-pulse"></span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <path
+            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+        </svg>
+        24×7 Emergency Helpline: +91 120 4200 400
+      </a>
+      <div class="tb-right">
+        <span>Mon–Sat · 8:00 AM – 9:00 PM</span>
+        <a href="patient-portal.html" class="tb-link-accent">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+            <circle cx="12" cy="7" r="4" />
+          </svg>
+          Patient Portal
+        </a>
+        <a href="contact.html">Locations & Directions</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= HEADER ================= -->
+  <header class="sf-header">
+    <div class="wrap nav-row">
+      <a href="index.html" class="brand" aria-label="Sufia Healthcare Homepage">
+        <img src="assets/img/logo-sufia.png" alt="Sufia Healthcare - Multi-Specialty Hospital">
+      </a>
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="index.html#about">About</a>
+        <a href="doctors.html">Doctors</a>
+        <a href="specialities.html">Departments</a>
+        <a href="index.html#packages">Health Packages</a>
+        <a href="emergency.html" style="color:var(--coral-600);font-weight:700;">Emergency</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="nav-cta">
+        <div class="language-switcher">
+          <label for="siteLanguage" class="sr-only">Language</label>
+          <select id="siteLanguage" class="language-select" aria-label="Select website language">
+            <option value="en">English</option>
+            <option value="hi">हिंदी</option>
+          </select>
+        </div>
+        <a href="contact.html" class="btn btn-cyan btn-sm">Book Appointment</a>
+        <button class="burger" aria-label="Toggle Navigation Menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= PAGE HERO ================= -->
+  <section class="page-hero">
+    <div class="wrap text-center">
+      <span class="eyebrow" style="background: rgba(14, 171, 163, 0.15); color: var(--cyan-400);">PATIENT
+        SELF-SERVICE</span>
+      <h1>Track Appointment & Download Digital Slip</h1>
+      <p class="lead" style="margin: 12px auto 0;">Enter your Booking Reference Code or registered mobile number to
+        check real-time OPD token status and print receipt.</p>
+    </div>
+  </section>
+
+  <!-- ================= SEARCH SECTION ================= -->
+  <section class="sf-section tight on-mist">
+    <div class="wrap" style="max-width: 760px;">
+
+      <div class="dept-card" style="padding: 36px; background: #ffffff;">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px;">
+          <div>
+            <h3 style="font-size: 1.25rem;">Lookup Your Consultation Booking</h3>
+            <p style="font-size: 0.88rem; color: var(--slate); margin-top: 4px;">Search by Ref ID (e.g., SF-88219) or
+              10-digit mobile number.</p>
+          </div>
+          <a href="login.html" class="btn btn-navy btn-sm" style="white-space: nowrap;">Multi-Role Login →</a>
+        </div>
+
+        <form id="portalSearchForm" style="display: flex; gap: 12px; flex-wrap: wrap;">
+          <input type="text" id="portalSearchQuery" class="form-control"
+            placeholder="Enter Ref ID e.g. SF-88219 or Mobile No." required
+            style="flex: 1; padding: 14px 18px; border-radius: var(--radius-sm); border: 1.5px solid var(--line); font-size: 1rem;">
+          <button type="submit" class="btn btn-cyan" style="white-space: nowrap; padding: 14px 28px;">🔍 Search
+            Token</button>
+        </form>
+
+        <div
+          style="margin-top: 14px; display: flex; gap: 8px; flex-wrap: wrap; align-items: center; font-size: 0.78rem; color: var(--slate);">
+          <span>Quick Demo Search:</span>
+          <button type="button"
+            onclick="document.getElementById('portalSearchQuery').value='SF-88219'; document.getElementById('portalSearchForm').dispatchEvent(new Event('submit'));"
+            class="demo-btn-chip">SF-88219 (Dr. Rahul)</button>
+          <button type="button"
+            onclick="document.getElementById('portalSearchQuery').value='SF-99104'; document.getElementById('portalSearchForm').dispatchEvent(new Event('submit'));"
+            class="demo-btn-chip">SF-99104 (Dr. Ananya)</button>
+        </div>
+      </div>
+
+      <!-- Results Container -->
+      <div id="portalResultsContainer" style="margin-top: 24px;">
+        <!-- Rendered via js/portal.js -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="sf-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-brand-img">
+            <img src="assets/img/logo-sufia.png" alt="Sufia Healthcare">
+          </div>
+          <p style="margin-bottom:10px;">Sufia Super Speciality Hospital is dedicated to delivering high-quality,
+            accessible, and reliable medical services.</p>
+          <div style="font-size:0.83rem;color:#a9b8cc;display:grid;gap:4px;">
+            <div>📍 Hussaini More, Bindusar, Siwan, Bihar 841227</div>
+            <div>✉️ sufiahealthcare26@gmail.com</div>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h5>Patient Care</h5>
+          <ul>
+            <li><a href="doctors.html">Find a Doctor</a></li>
+            <li><a href="contact.html">Book Appointment</a></li>
+            <li><a href="specialities.html">Departments</a></li>
+            <li><a href="patient-portal.html">Track Booking</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Portal Access</h5>
+          <ul>
+            <li><a href="login.html">Patient Login</a></li>
+            <li><a href="login.html">Doctor OPD Portal</a></li>
+            <li><a href="login.html">Staff Console</a></li>
+            <li><a href="login.html">Admin Dashboard</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Emergency</h5>
+          <ul>
+            <li><a href="emergency.html">24x7 Ambulance</a></li>
+            <li><a href="emergency.html">Trauma Care Center</a></li>
+            <li><a href="contact.html">Hospital Location</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Location : Sufia Memorial Hospital</h5>
+          <iframe sSufia Healthcare Super Specialty
+            Hospital!1m12!1m3!1d916230.243349504!2d83.14606817812499!3d26.22839709999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3992fc054a98385b%3A0x2f0715d2b6ddf3fb!2sSufia%20Memorial%20Hospital!5e0!3m2!1sen!2sin!4v1787139858578!5m2!1sen!2sin"
+            width="280" height="130" style="border:0; border-radius:14px; box-shadow: 0 4px 14px rgba(0,0,0,0.25);"
+            allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>
+          <span>© 2026 Sufia Healthcare. All rights reserved.</span>
+          <span class="agency-credit">· Designed &amp; Developed by <a href="https://digiritual.com" target="_blank" rel="noopener noreferrer">Digi Ritual</a></span>
+        </div>
+        <div>
+          <span>NABH & JCI Accredited Super Specialty Hospital</span>
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <a href="terms-conditions.html">Terms &amp; Conditions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  
+  <!-- App data/content kept in HTML; JavaScript only controls behaviour -->
+  <div id="sufiaDoctorData" hidden aria-hidden="true">
+    <div class="sufia-doctor-data" data-id="doc-1" data-name="Dr. Nilesh Mishra" data-dept="Orthopaedics &amp; Spine" data-qual="Senior Consultant - Orthopaedics | DNB, DO, MBBS" data-exp="20+ Yrs" data-fee="₹900" data-rating="4.9 ★★★★★" data-image="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&amp;fit=crop&amp;w=600&amp;q=80">
+      <span class="sufia-branch-data" data-name="SUFIA HEALTHCARE Nelson Manickam Road, Chennai" data-slots="36" data-next="Tomorrow 09:00 AM"></span>
+      <span class="sufia-branch-data" data-name="SUFIA HEALTHCARE Alwarpet, Chennai" data-slots="18" data-next="Tomorrow 02:30 PM"></span>
+    </div>
+    <div class="sufia-doctor-data" data-id="doc-2" data-name="Dr. Vineesh Mathur" data-dept="Spine Surgery" data-qual="Director - Spine Surgery Unit | MS (Ortho), FRCS" data-exp="38+ Yrs" data-fee="₹1,500" data-rating="5.0 ★★★★★" data-image="https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&amp;fit=crop&amp;w=600&amp;q=80">
+      <span class="sufia-branch-data" data-name="SUFIA HEALTHCARE Nelson Manickam Road, Chennai" data-slots="24" data-next="Tomorrow 10:20 AM"></span>
+    </div>
+    <div class="sufia-doctor-data" data-id="doc-3" data-name="Dr. Vipin Chand Tyagi" data-dept="Orthopaedics &amp; Joint Replacement" data-qual="Senior Director - Joint Replacement &amp; Arthroscopy" data-exp="27+ Yrs" data-fee="₹1,500" data-rating="4.8 ★★★★★" data-image="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&amp;fit=crop&amp;w=600&amp;q=80">
+      <span class="sufia-branch-data" data-name="SUFIA HEALTHCARE Alwarpet, Chennai" data-slots="42" data-next="Tomorrow 12:30 PM"></span>
+    </div>
+    <div class="sufia-doctor-data" data-id="doc-4" data-name="Dr. Madan Mohan B" data-dept="Cardiac Sciences" data-qual="Senior Consultant - Interventional Cardiology" data-exp="25+ Yrs" data-fee="₹1,200" data-rating="4.9 ★★★★★" data-image="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&amp;fit=crop&amp;w=600&amp;q=80">
+      <span class="sufia-branch-data" data-name="SUFIA HEALTHCARE Nelson Manickam Road, Chennai" data-slots="15" data-next="Today 04:00 PM"></span>
+    </div>
+    <div class="sufia-doctor-data" data-id="doc-5" data-name="Dr. Arcot Jaishree Gajaraj" data-dept="Obstetrics &amp; Gynaecology" data-qual="Senior Director - Obstetrics &amp; High Risk Pregnancy | FRCS, FRCOG" data-exp="35+ Yrs" data-fee="₹1,500" data-rating="5.0 ★★★★★" data-image="https://images.unsplash.com/photo-1594824813566-88855ce75341?auto=format&amp;fit=crop&amp;w=600&amp;q=80">
+      <span class="sufia-branch-data" data-name="SUFIA HEALTHCARE Alwarpet, Chennai" data-slots="28" data-next="Tomorrow 11:00 AM"></span>
+    </div>
+    <div class="sufia-doctor-data" data-id="doc-6" data-name="Dr. Prashanth R" data-dept="Heart &amp; Lung Transplant" data-qual="Director - Organ Transplant &amp; ECMO Specialist | MCh (CTVS)" data-exp="22+ Yrs" data-fee="₹2,000" data-rating="5.0 ★★★★★" data-image="https://images.unsplash.com/photo-1582750433449-648ed127bb54?auto=format&amp;fit=crop&amp;w=600&amp;q=80">
+      <span class="sufia-branch-data" data-name="SUFIA HEALTHCARE Nelson Manickam Road, Chennai" data-slots="12" data-next="Today 05:30 PM"></span>
+    </div>
+    <div class="sufia-doctor-data" data-id="doc-7" data-name="Dr. Meenakshi Sundaram" data-dept="Neurosurgery &amp; Spine" data-qual="Senior Consultant - Brain &amp; Micro Neurosurgery | DNB (Neuro)" data-exp="24+ Yrs" data-fee="₹1,400" data-rating="4.9 ★★★★★" data-image="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&amp;fit=crop&amp;w=600&amp;q=80">
+      <span class="sufia-branch-data" data-name="SUFIA HEALTHCARE Nelson Manickam Road, Chennai" data-slots="20" data-next="Tomorrow 09:30 AM"></span>
+    </div>
+    <div class="sufia-doctor-data" data-id="doc-8" data-name="Dr. Rajesh Kumar Sharma" data-dept="Oncology &amp; Cancer Care" data-qual="Chief Surgical Oncologist | MS, MCh (Surgical Oncology)" data-exp="30+ Yrs" data-fee="₹1,800" data-rating="4.9 ★★★★★" data-image="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&amp;fit=crop&amp;w=600&amp;q=80">
+      <span class="sufia-branch-data" data-name="SUFIA HEALTHCARE Alwarpet, Chennai" data-slots="16" data-next="Tomorrow 03:00 PM"></span>
+    </div>
+  </div>
+
+  <template id="searchNoResultsTemplate">
+    <div style="padding:16px;text-align:center;color:#64748b;font-size:.9rem;">
+      No specialist doctor found for “<strong data-field="query"></strong>”. Try searching for Cardiac, Ortho, Spine, or Gynaec.
+    </div>
+  </template>
+
+  <template id="searchResultTemplate">
+    <div class="search-result-item">
+      <img data-field="image" class="search-result-avatar" alt="Doctor">
+      <div>
+        <div class="search-result-title" data-field="name"></div>
+        <div class="search-result-sub"><span data-field="qual"></span> • <span data-field="dept" style="color:#008080;font-weight:700;"></span></div>
+      </div>
+      <div style="margin-left:auto;"><span data-field="fee" style="background:#e6f5f5;color:#008080;padding:4px 10px;border-radius:20px;font-size:.75rem;font-weight:700;"></span></div>
+    </div>
+  </template>
+
+  <div id="doctorBookingDrawer" class="booking-drawer-modal" aria-hidden="true">
+    <div class="drawer-content">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:24px;border-bottom:1px solid #e2e8f0;padding-bottom:16px;">
+        <div style="display:flex;gap:16px;align-items:center;">
+          <img data-drawer="image" style="width:76px;height:76px;border-radius:16px;object-fit:cover;border:3px solid #008080;box-shadow:0 4px 12px rgba(0,128,128,.2);" alt="Doctor">
+          <div>
+            <h3 data-drawer="name" style="font-size:1.3rem;color:#0f172a;margin-bottom:2px;"></h3>
+            <div data-drawer="qual" style="font-size:.85rem;color:#64748b;margin-bottom:4px;"></div>
+            <div style="display:flex;gap:10px;font-size:.8rem;font-weight:700;">
+              <span style="color:#008080;">Exp: <span data-drawer="exp"></span></span><span style="color:#64748b;">•</span>
+              <span data-drawer="rating" style="color:#f59e0b;"></span><span style="color:#64748b;">•</span>
+              <span style="color:#0f172a;">Fee: <span data-drawer="fee"></span></span>
+            </div>
+          </div>
+        </div>
+        <button type="button" data-action="close-drawer" style="background:#f1f5f9;border:none;font-size:1.5rem;cursor:pointer;color:#64748b;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;">&times;</button>
+      </div>
+      <div class="drawer-tabs">
+        <div class="drawer-tab-btn" data-mode="in-hospital">🏥 In-Hospital Consultation</div>
+        <div class="drawer-tab-btn" data-mode="video">📹 Online Video Consultation</div>
+      </div>
+      <div style="font-weight:800;font-size:.95rem;margin-bottom:12px;color:#0f172a;">1. Select Preferred Consultation Date:</div>
+      <div class="slot-day-selector">
+        <div class="slot-day-card" data-date="Today"><div class="slot-day-name">Today</div><div class="slot-day-count">12 Slots Free</div></div>
+        <div class="slot-day-card" data-date="Tomorrow"><div class="slot-day-name">Tomorrow</div><div class="slot-day-count">36 Slots Free</div></div>
+        <div class="slot-day-card" data-date="Day After"><div class="slot-day-name">Day After</div><div class="slot-day-count">28 Slots Free</div></div>
+      </div>
+      <div style="font-weight:800;font-size:.95rem;margin-bottom:12px;color:#0f172a;">2. Select Available Time Slot:</div>
+      <div class="time-slots-grid">
+        <button type="button" class="time-slot-btn" data-time="09:00 AM - 10:00 AM">🌅 09:00 AM</button>
+        <button type="button" class="time-slot-btn" data-time="10:30 AM - 11:30 AM">🌅 10:30 AM</button>
+        <button type="button" class="time-slot-btn" data-time="12:00 PM - 01:00 PM">☀️ 12:00 PM</button>
+        <button type="button" class="time-slot-btn" data-time="02:30 PM - 03:30 PM">☀️ 02:30 PM</button>
+        <button type="button" class="time-slot-btn" data-time="04:30 PM - 05:30 PM">🌆 04:30 PM</button>
+        <button type="button" class="time-slot-btn" data-time="06:00 PM - 07:00 PM">🌙 06:00 PM</button>
+      </div>
+      <div style="font-weight:800;font-size:.95rem;margin-bottom:12px;color:#0f172a;">3. Choose Hospital Branch &amp; Reserve:</div>
+      <div data-drawer="branches"></div>
+    </div>
+  </div>
+
+  <template id="branchSlotTemplate">
+    <div class="branch-slot-box">
+      <div style="display:flex;justify-content:space-between;align-items:center;">
+        <div class="branch-name">🏥 <span data-field="branch-name"></span></div>
+        <span style="background:#dcfce7;color:#166534;font-size:.78rem;font-weight:800;padding:4px 12px;border-radius:20px;"><span data-field="branch-slots"></span> Slots Free</span>
+      </div>
+      <div class="branch-avail">⚡ Next Available: <strong data-field="branch-next"></strong></div>
+      <div style="margin-top:12px;text-align:right;"><span style="color:#008080;font-weight:800;font-size:.88rem;">Proceed to Patient Details &rarr;</span></div>
+    </div>
+  </template>
+
+
+  <!-- Patient portal UI templates: content stays in HTML -->
+  <template id="portalPromptTemplate">
+    <div style="text-align:center;padding:40px;background:#fff;border-radius:16px;">
+      <p style="color:#64748b;">Please enter your Reference ID (e.g. MGM-123456) or Registered Mobile Number.</p>
+    </div>
+  </template>
+
+  <template id="portalNotFoundTemplate">
+    <div style="text-align:center;padding:50px;background:#fff;border-radius:16px;border:1px dashed #cbd5e1;">
+      <div style="font-size:2.5rem;margin-bottom:10px;">📋</div>
+      <h3 style="color:#0f172a;margin-bottom:6px;">No appointment found for “<span data-field="query"></span>”</h3>
+      <p style="color:#64748b;font-size:.95rem;margin-bottom:20px;">Please verify your Reference ID or book a new appointment below.</p>
+      <a href="contact.html" class="btn btn-primary">⚡ Book New Appointment</a>
+    </div>
+  </template>
+
+  <template id="portalResultTemplate">
+    <div style="background:#fff;border-radius:var(--radius-lg);padding:32px;box-shadow:var(--shadow-sm);border:1px solid var(--border-color);margin-bottom:24px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #e2e8f0;padding-bottom:16px;margin-bottom:20px;flex-wrap:wrap;gap:12px;">
+        <div><span style="font-size:.75rem;text-transform:uppercase;color:#64748b;font-weight:700;">Reference Code</span><h3 data-field="refId" style="font-size:1.6rem;color:#007c89;margin:0;"></h3></div>
+        <div style="text-align:right;">
+          <span data-field="status" style="padding:6px 14px;border-radius:20px;font-weight:700;font-size:.85rem;"></span>
+          <div style="font-size:.8rem;color:#64748b;margin-top:4px;">Booked on <span data-field="createdAt"></span></div>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-bottom:24px;font-size:.95rem;">
+        <div><div style="color:#64748b;font-size:.85rem;">Patient Name</div><strong data-field="patient"></strong></div>
+        <div><div style="color:#64748b;font-size:.85rem;">Contact Phone</div><strong data-field="phone"></strong></div>
+        <div><div style="color:#64748b;font-size:.85rem;">Doctor / Specialist</div><strong data-field="doctorName" style="color:#0f172a;"></strong></div>
+        <div><div style="color:#64748b;font-size:.85rem;">Department</div><strong data-field="dept"></strong></div>
+        <div><div style="color:#64748b;font-size:.85rem;">Appointment Date &amp; Time</div><strong data-field="datetime" style="color:#007c89;"></strong></div>
+        <div><div style="color:#64748b;font-size:.85rem;">Consultation Fee</div><strong data-field="doctorFee" style="color:#007c89;"></strong></div>
+      </div>
+      <div style="display:flex;gap:12px;border-top:1px solid #f1f5f9;padding-top:16px;">
+        <button type="button" class="btn btn-primary" data-action="print">🖨️ Print Digital Ticket</button>
+        <button type="button" class="btn btn-outline" data-action="cancel" style="color:#ef4444;border-color:#ef4444;">❌ Cancel Appointment</button>
+      </div>
+    </div>
+  </template>
+
+  <div id="receiptModal" class="modal-backdrop" aria-hidden="true">
+    <div class="modal-content" style="border-top:6px solid #008080;">
+      <button class="modal-close" type="button" data-action="close-receipt">&times;</button>
+      <div style="text-align:center;margin-bottom:24px;">
+        <div style="width:64px;height:64px;background:#e6f5f5;color:#008080;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:2.2rem;margin-bottom:12px;box-shadow:0 4px 14px rgba(0,128,128,.2);">✓</div>
+        <h2 style="color:#008080;margin-bottom:4px;font-size:1.8rem;">Appointment Confirmed!</h2>
+        <p style="color:#64748b;font-size:.95rem;">Digital Appointment Slip generated for SUFIA HEALTHCARE.</p>
+      </div>
+      <div class="receipt-box">
+        <div class="receipt-header">
+          <div><div style="font-size:.75rem;text-transform:uppercase;letter-spacing:1px;color:#64748b;font-weight:700;">Booking Reference Code</div><div data-receipt="refId" style="font-size:1.5rem;font-weight:800;color:#0f172a;"></div></div>
+          <div style="text-align:right;"><span data-receipt="status" style="background:#dcfce7;color:#166534;font-size:.82rem;font-weight:800;padding:6px 12px;border-radius:20px;"></span></div>
+        </div>
+        <div class="receipt-row"><span>Patient Name:</span><strong data-receipt="patient"></strong></div>
+        <div class="receipt-row"><span>Contact Phone:</span><strong data-receipt="phone"></strong></div>
+        <div class="receipt-row"><span>Specialist Doctor:</span><strong data-receipt="doctorName" style="color:#0f172a;"></strong></div>
+        <div class="receipt-row"><span>Department:</span><strong data-receipt="dept"></strong></div>
+        <div class="receipt-row"><span>Consultation Mode:</span><strong data-receipt="mode"></strong></div>
+        <div class="receipt-row"><span>Scheduled Date &amp; Time:</span><strong data-receipt="datetime" style="color:#008080;"></strong></div>
+        <div class="receipt-row"><span>Hospital Location:</span><strong data-receipt="location"></strong></div>
+        <div class="receipt-row" style="margin-top:12px;padding-top:10px;border-top:1px dashed #cbd5e1;"><span>Consultation Fee:</span><strong data-receipt="doctorFee" style="font-size:1.2rem;color:#008080;"></strong></div>
+      </div>
+      <div style="display:flex;gap:12px;margin-top:24px;flex-wrap:wrap;">
+        <button class="btn btn-primary" type="button" data-action="print-receipt" style="flex:1;">🖨️ Print Digital Ticket</button>
+        <a data-receipt="portalLink" href="patient-portal.html" class="btn btn-outline" style="flex:1;text-align:center;">📱 View in Patient Portal</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+  <script src="js/appointment.js"></script>
+  <script src="js/portal.js"></script>
+  <script src="js/language.js"></script>
+</body>
+
+</html>

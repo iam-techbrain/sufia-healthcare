@@ -1,0 +1,935 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Departments & Official Scope of Healthcare Services | Sufia Healthcare</title>
+    <meta
+      name="description"
+      content="Explore clinical departments, super specialities, and certified scope of services at Sufia Healthcare: Obstetrics, General Surgery, Urology, Paediatrics, ICU, NICU, PICU, 24x7 CT Scan, Modular OTs & Pathology Lab."
+    />
+    <link rel="stylesheet" href="css/premium.css" />
+    <link rel="icon" type="image/svg+xml" href="assets/img/favicon.ico" />
+    <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" />
+
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-MQR9J36D");
+    </script>
+
+    <style>
+      /* Care Pathway Strip inside page-hero */
+      .care-path-strip {
+        background: rgba(7, 26, 46, 0.75);
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        border-radius: 50px;
+        padding: 12px 24px;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+        font-size: 0.84rem;
+        font-weight: 600;
+        margin-top: 22px;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+      }
+
+      .care-path-strip span.arrow {
+        color: var(--cyan-400);
+        font-size: 0.95rem;
+      }
+
+      .scope-search-box {
+        max-width: 600px;
+        margin: 28px auto 0;
+        position: relative;
+      }
+
+      .scope-search-box input {
+        width: 100%;
+        padding: 15px 22px 15px 48px;
+        border-radius: 50px;
+        border: 2px solid rgba(255, 255, 255, 0.22);
+        background: rgba(255, 255, 255, 0.95);
+        color: var(--navy-950);
+        font-size: 0.95rem;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+        outline: none;
+        transition: 0.25s ease;
+      }
+
+      .scope-search-box input:focus {
+        border-color: var(--cyan-400);
+        background: #ffffff;
+        box-shadow: 0 12px 35px rgba(10, 143, 138, 0.25);
+      }
+
+      .scope-search-box .search-icon {
+        position: absolute;
+        left: 18px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: var(--cyan-600);
+        font-size: 1.1rem;
+      }
+
+      /* Scope Layout & Deep Details */
+      .scope-wrapper {
+        display: grid;
+        grid-template-columns: 280px minmax(0, 1fr);
+        gap: 32px;
+        align-items: start;
+        margin-top: 40px;
+      }
+
+      .scope-sticky-nav {
+        position: sticky;
+        top: 96px;
+        background: #ffffff;
+        border-radius: var(--radius-md);
+        border: 1px solid var(--line);
+        padding: 20px;
+        box-shadow: 0 4px 20px rgba(11, 37, 69, 0.05);
+      }
+
+      .scope-sticky-nav h5 {
+        font-size: 0.82rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--cyan-700);
+        margin: 0 0 14px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .scope-nav-links {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+
+      .scope-nav-links a {
+        display: block;
+        padding: 9px 12px;
+        border-radius: 8px;
+        color: var(--slate);
+        font-size: 0.85rem;
+        font-weight: 600;
+        transition: 0.2s ease;
+        text-decoration: none;
+      }
+
+      .scope-nav-links a:hover,
+      .scope-nav-links a.active {
+        color: var(--cyan-700);
+        background: var(--cyan-50);
+        padding-left: 16px;
+      }
+
+      .scope-block {
+        background: #ffffff;
+        border: 1px solid var(--line);
+        border-radius: var(--radius-md);
+        padding: 32px;
+        margin-bottom: 24px;
+        box-shadow: var(--shadow-sm);
+        scroll-margin-top: 110px;
+      }
+
+      .scope-block-header {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        margin-bottom: 20px;
+        padding-bottom: 16px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .scope-block-badge {
+        width: 44px;
+        height: 44px;
+        border-radius: 12px;
+        background: linear-gradient(135deg, var(--cyan-600), var(--cyan-700));
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 800;
+        font-size: 1.15rem;
+        flex-shrink: 0;
+      }
+
+      .scope-block-header h3 {
+        margin: 0;
+        font-size: 1.35rem;
+        color: var(--navy-950);
+      }
+
+      .scope-block-header p {
+        margin: 4px 0 0;
+        font-size: 0.85rem;
+        color: var(--slate);
+      }
+
+      .scope-check-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px 24px;
+        margin: 18px 0;
+        list-style: none;
+        padding: 0;
+      }
+
+      .scope-check-grid li {
+        position: relative;
+        padding-left: 24px;
+        font-size: 0.88rem;
+        color: var(--ink-soft);
+        line-height: 1.5;
+      }
+
+      .scope-check-grid li::before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        top: 1px;
+        color: var(--cyan-600);
+        font-weight: 800;
+      }
+
+      .feature-callout {
+        background: linear-gradient(135deg, #edf8f7, #f7fbfb);
+        border: 1px solid #d5eceb;
+        border-radius: 12px;
+        padding: 18px 20px;
+        margin: 16px 0;
+      }
+
+      .feature-callout strong {
+        display: block;
+        color: var(--cyan-800);
+        font-size: 0.92rem;
+        margin-bottom: 4px;
+      }
+
+      .feature-callout p {
+        margin: 0;
+        font-size: 0.84rem;
+        color: var(--slate);
+        line-height: 1.6;
+      }
+
+      @media (max-width: 992px) {
+        .scope-wrapper {
+          grid-template-columns: 1fr;
+        }
+
+        .scope-sticky-nav {
+          position: relative;
+          top: 0;
+        }
+
+        .scope-check-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+
+  <body class="sf">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+      <iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-MQR9J36D"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe>
+    </noscript>
+
+    <!-- Header loaded dynamically -->
+    <div id="site-header"></div>
+
+    <!-- ================= PAGE HERO ================= -->
+    <section class="page-hero">
+      <div class="wrap text-center">
+        <span
+          class="eyebrow"
+          style="background: rgba(14, 171, 163, 0.2); color: var(--cyan-400)"
+          >NABH GUIDELINES · CLINICAL EXCELLENCE</span
+        >
+        <h1>Departments &amp; Official Scope of Services</h1>
+        <p class="lead" style="margin: 14px auto 0; max-width: 780px;">
+          Explore our 22+ clinical departments, 24x7 critical care units, 3 modular operation theatres, and certified diagnostic scope at Sufia Healthcare.
+        </p>
+
+        <div class="hero-feature-chips">
+          <span class="hero-chip">🏥 22+ Clinical Specialities</span>
+          <span class="hero-chip">⚡ 24×7 Trauma, ICU &amp; Diagnostics</span>
+          <span class="hero-chip">🔬 In-House CT Scan &amp; Pathology</span>
+          <span class="hero-chip">🛡️ NABH-Guided Protocols</span>
+        </div>
+
+        <!-- Care Pathway Strip -->
+        <div class="care-path-strip">
+          <span style="color: var(--cyan-400); font-weight: 700;">Integrated Care Flow:</span>
+          <span>OPD</span>
+          <span class="arrow">➔</span>
+          <span>Diagnostics</span>
+          <span class="arrow">➔</span>
+          <span>Emergency</span>
+          <span class="arrow">➔</span>
+          <span>Inpatient</span>
+          <span class="arrow">➔</span>
+          <span>Modular OT</span>
+          <span class="arrow">➔</span>
+          <span>ICU / NICU / PICU</span>
+          <span class="arrow">➔</span>
+          <span>Discharge</span>
+        </div>
+
+        <div style="margin-top: 24px; display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;">
+          <a
+            href="#full-scope-doc"
+            class="btn btn-outline btn-sm"
+            style="display: inline-flex; align-items: center; gap: 8px; color: #fff; border-color: rgba(255, 255, 255, 0.35);"
+          >
+            🔍 Read Full Scope Document ↓
+          </a>
+        </div>
+
+        <!-- Live Department Search -->
+        <div class="scope-search-box">
+          <span class="search-icon">🔍</span>
+          <input
+            type="text"
+            id="deptSearchInput"
+            placeholder="Search departments (e.g., Gynaecology, Surgery, ICU, CT Scan, Urology)..."
+            aria-label="Search departments"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SPECIALITIES QUICK CARDS ================= -->
+    <section class="sf-section on-mist" id="primary-departments">
+      <div class="wrap">
+        <div class="section-head text-center">
+          <span class="eyebrow">CLINICAL &amp; MEDICAL EXCELLENCE</span>
+          <h2>Primary Clinical Departments</h2>
+          <p>Consult with experienced specialists and book hospital consultations directly.</p>
+        </div>
+
+        <div class="grid grid-3" id="deptCardGrid" style="margin-top: 36px;">
+          <!-- Obstetrics & Gynaecology -->
+          <div class="dept-card" data-keywords="obstetrics gynaecology pregnancy normal delivery c-section women maternity baby">
+            <div class="dept-ico">🤰</div>
+            <h4>Obstetrics &amp; Gynaecology</h4>
+            <p>
+              Comprehensive antenatal &amp; postnatal care, high-risk pregnancy management, normal &amp; C-section deliveries, infertility evaluation, laparoscopic gynaecological procedures, and post-delivery follow-up.
+            </p>
+            <a href="contact.html?dept=Obstetrics+%26+Gynaecology" class="btn btn-cyan btn-sm" style="width: 100%; margin-top: 14px;">
+              Book Gynaecologist →
+            </a>
+          </div>
+
+          <!-- General Surgery -->
+          <div class="dept-card" data-keywords="general surgery laparoscopic hernia appendix gallbladder ot surgeon operation">
+            <div class="dept-ico">🔪</div>
+            <h4>General &amp; Laparoscopic Surgery</h4>
+            <p>
+              Pre-operative assessment, elective and emergency abdominal surgery, laparoscopic hernia repair, appendectomy, gallbladder &amp; biliary tract procedures, wound management, and post-op care.
+            </p>
+            <a href="contact.html?dept=General+Surgery" class="btn btn-cyan btn-sm" style="width: 100%; margin-top: 14px;">
+              Book Surgeon →
+            </a>
+          </div>
+
+          <!-- Paediatric Care -->
+          <div class="dept-card" data-keywords="paediatric child children infant vaccination growth newborn sick child">
+            <div class="dept-ico">🧸</div>
+            <h4>Paediatric Care &amp; Child Health</h4>
+            <p>
+              Paediatric OPD consultations, treatment of acute childhood illnesses, vaccination guidance, growth and developmental monitoring, paediatric emergency stabilization, and inpatient pediatric care.
+            </p>
+            <a href="contact.html?dept=Paediatrics" class="btn btn-cyan btn-sm" style="width: 100%; margin-top: 14px;">
+              Book Paediatrician →
+            </a>
+          </div>
+
+          <!-- Urology Services -->
+          <div class="dept-card" data-keywords="urology kidney stone urinary prostate uti male bladder urine">
+            <div class="dept-ico">🩺</div>
+            <h4>Urology Services</h4>
+            <p>
+              Comprehensive evaluation and management of kidney &amp; urinary stones, UTIs, prostate-related conditions, male reproductive health, and minimally invasive urological procedures.
+            </p>
+            <a href="contact.html?dept=Urology" class="btn btn-cyan btn-sm" style="width: 100%; margin-top: 14px;">
+              Book Urologist →
+            </a>
+          </div>
+
+          <!-- Cardiac Sciences -->
+          <div class="dept-card" data-keywords="cardiac heart cardiology ecg echo chest pain bp hypertension">
+            <div class="dept-ico">🫀</div>
+            <h4>Cardiac Sciences &amp; Cardiology</h4>
+            <p>
+              Preventive cardiac checkups, hypertension management, interventional cardiology consultations, ECG, 2D Echo, cardiac rehab, and coordination with advanced cardiac care.
+            </p>
+            <a href="contact.html?dept=Cardiac+Sciences" class="btn btn-cyan btn-sm" style="width: 100%; margin-top: 14px;">
+              Book Cardiologist →
+            </a>
+          </div>
+
+          <!-- Orthopaedics & Spine -->
+          <div class="dept-card" data-keywords="orthopaedics bones joints fracture spine arthritis back pain knee replacement">
+            <div class="dept-ico">🦴</div>
+            <h4>Orthopaedics &amp; Joint Replacement</h4>
+            <p>
+              Trauma fracture reduction, joint replacement surgery, arthritis management, sports injury rehabilitation, spine care, and arthroscopic interventions.
+            </p>
+            <a href="contact.html?dept=Orthopaedics" class="btn btn-cyan btn-sm" style="width: 100%; margin-top: 14px;">
+              Book Orthopaedic Doctor →
+            </a>
+          </div>
+
+          <!-- Neurology & Neurosurgery -->
+          <div class="dept-card" data-keywords="neurology neurosurgery brain nerve stroke paralysis migraine headache">
+            <div class="dept-ico">🧠</div>
+            <h4>Neurology &amp; Neurosciences</h4>
+            <p>
+              Comprehensive diagnosis of headaches, epilepsy, stroke triage, nerve disorders, spinal disc compression, Parkinson's disease, and neurosurgical evaluation.
+            </p>
+            <a href="contact.html?dept=Neurology" class="btn btn-cyan btn-sm" style="width: 100%; margin-top: 14px;">
+              Book Neurologist →
+            </a>
+          </div>
+
+          <!-- Internal Medicine -->
+          <div class="dept-card" data-keywords="internal medicine physician fever diabetes bp thyroid infectious dengue typhoid">
+            <div class="dept-ico">👨‍⚕️</div>
+            <h4>Internal Medicine &amp; Critical Care</h4>
+            <p>
+              Diagnosis and treatment of infectious diseases, diabetes, hypertension, seasonal fever, multi-organ disorders, lifestyle ailments, and inpatient medical oversight.
+            </p>
+            <a href="contact.html?dept=Internal+Medicine" class="btn btn-cyan btn-sm" style="width: 100%; margin-top: 14px;">
+              Book Physician →
+            </a>
+          </div>
+
+          <!-- ENT & Head-Neck -->
+          <div class="dept-card" data-keywords="ent ear nose throat sinusitis hearing tonsils vertigo head neck">
+            <div class="dept-ico">👂</div>
+            <h4>ENT (Ear, Nose &amp; Throat)</h4>
+            <p>
+              Diagnostic endoscopy, micro-ear surgery, endoscopic sinus surgery, tonsillectomy, allergy management, hearing evaluations, and head-and-neck treatments.
+            </p>
+            <a href="contact.html?dept=ENT" class="btn btn-cyan btn-sm" style="width: 100%; margin-top: 14px;">
+              Book ENT Specialist →
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CRITICAL CARE & INFRASTRUCTURE ================= -->
+    <section class="sf-section">
+      <div class="wrap">
+        <div class="section-head text-center">
+          <span class="eyebrow" style="background: var(--coral-50); color: var(--coral-600)">ROUND-THE-CLOCK CRITICAL CARE</span>
+          <h2>24×7 Intensive Care &amp; Modern Diagnostics</h2>
+          <p>Fully equipped emergency units, modular OTs, and diagnostic suites staffed 24 hours a day.</p>
+        </div>
+
+        <div class="grid grid-4" style="margin-top: 36px;">
+          <div class="dept-card" style="border-top: 4px solid var(--coral-500)">
+            <div class="dept-ico" style="background: var(--coral-50); color: var(--coral-600)">🚨</div>
+            <h4>24×7 Emergency &amp; Trauma</h4>
+            <p>Rapid clinical triage, acute trauma resuscitation, round-the-clock emergency medical team, and instant OT/ICU transfer.</p>
+          </div>
+
+          <div class="dept-card" style="border-top: 4px solid var(--coral-500)">
+            <div class="dept-ico" style="background: var(--coral-50); color: var(--coral-600)">🛏️</div>
+            <h4>Intensive Care Unit (ICU)</h4>
+            <p>Continuous multipara monitoring of critically ill patients, mechanical ventilators, invasive hemodynamic monitoring, and dedicated critical-care nursing.</p>
+          </div>
+
+          <div class="dept-card" style="border-top: 4px solid var(--coral-500)">
+            <div class="dept-ico" style="background: var(--coral-50); color: var(--coral-600)">👶</div>
+            <h4>Neonatal ICU (NICU)</h4>
+            <p>Specialized incubators, phototherapy, advanced neonatal ventilators, and round-the-clock neonatologist care for premature newborns.</p>
+          </div>
+
+          <div class="dept-card" style="border-top: 4px solid var(--coral-500)">
+            <div class="dept-ico" style="background: var(--coral-50); color: var(--coral-600)">👧</div>
+            <h4>Paediatric ICU (PICU)</h4>
+            <p>Dedicated paediatric intensive monitoring, severe infection management, and post-operative paediatric critical care.</p>
+          </div>
+        </div>
+
+        <div class="grid grid-3" style="margin-top: 24px;">
+          <div class="dept-card">
+            <div class="dept-ico">🩻</div>
+            <h4>24×7 CT Scan &amp; Digital X-Ray</h4>
+            <p>Round-the-clock high-speed spiral CT Scan, Digital X-Ray, 4D Ultrasound (USG), and emergency diagnostic imaging with qualified radiologist reporting.</p>
+          </div>
+
+          <div class="dept-card">
+            <div class="dept-ico">🧪</div>
+            <h4>In-House Pathology Lab</h4>
+            <p>Full-range Hematology, Clinical Biochemistry, Serology, Microbiology, Arterial Blood Gas (ABG), and rapid ICU emergency test panels.</p>
+          </div>
+
+          <div class="dept-card">
+            <div class="dept-ico">🏥</div>
+            <h4>3 Modular Operation Theatres</h4>
+            <p>Three advanced modular operation theatres equipped with laminar airflow and HEPA filtration for infection-free surgical precision.</p>
+          </div>
+
+          <div class="dept-card">
+            <div class="dept-ico">💊</div>
+            <h4>24×7 In-House Pharmacy</h4>
+            <p>Round-the-clock pharmacy stocked with authentic pharmaceuticals, surgical consumables, and emergency life-saving medications.</p>
+          </div>
+
+          <div class="dept-card">
+            <div class="dept-ico">🍱</div>
+            <h4>In-House Patient Dietary</h4>
+            <p>Nutritious and hygienic hospital meals prepared by trained culinary staff under the guidance of clinical dietitians for IPD patients.</p>
+          </div>
+
+          <div class="dept-card">
+            <div class="dept-ico">💳</div>
+            <h4>Cashless TPA &amp; Insurance</h4>
+            <p>Hassle-free cashless hospitalization, fast pre-authorisation processing, and dedicated claim assistance with major insurers.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= MERGED FULL SCOPE OF SERVICES DOCUMENT ================= -->
+    <section class="sf-section on-mist" id="full-scope-doc">
+      <div class="wrap">
+        <div class="section-head text-center">
+          <span class="eyebrow">OFFICIAL DOCUMENTATION</span>
+          <h2>Certified Scope of Healthcare Services</h2>
+          <p>Official, comprehensive documentation of all clinical, procedural, and administrative capabilities at Sufia Healthcare Pvt. Ltd.</p>
+        </div>
+
+        <div class="scope-wrapper">
+          <!-- Sticky Sidebar Jump Nav -->
+          <aside class="scope-sticky-nav">
+            <h5>Scope Sections</h5>
+            <nav class="scope-nav-links">
+              <a href="#scope-overview">1. Overview &amp; Objectives</a>
+              <a href="#scope-obgyn">2. Obstetrics &amp; Gynaecology</a>
+              <a href="#scope-surgery">3. General Surgery</a>
+              <a href="#scope-paediatrics">4. Paediatric Care</a>
+              <a href="#scope-emergency">5. 24x7 Emergency Desk</a>
+              <a href="#scope-icu">6. ICU, NICU &amp; PICU</a>
+              <a href="#scope-opd">7. Outpatient (OPD)</a>
+              <a href="#scope-urology">8. Urology Services</a>
+              <a href="#scope-lab">9. Pathology Laboratory</a>
+              <a href="#scope-radiology">10. Radiology &amp; CT Scan</a>
+              <a href="#scope-ot">11. Modular Theatres &amp; Surgery</a>
+              <a href="#scope-ipd">12. Inpatient &amp; Hospitalization</a>
+              <a href="#scope-tpa">13. Insurance &amp; Cashless TPA</a>
+              <a href="#scope-quality">14. Quality, Safety &amp; NABH</a>
+              <a href="#scope-signatory">15. Official Signatory</a>
+            </nav>
+          </aside>
+
+          <!-- Main Scope Content -->
+          <div class="scope-content-body">
+            <!-- 1. Overview -->
+            <div class="scope-block" id="scope-overview">
+              <div class="scope-block-header">
+                <div class="scope-block-badge">1</div>
+                <div>
+                  <h3>Institutional Overview &amp; Objectives</h3>
+                  <p>Commitment to accessible, timely, coordinated, and ethical healthcare.</p>
+                </div>
+              </div>
+              <p>
+                Sufia Healthcare Pvt. Ltd. provides comprehensive healthcare services through an integrated multidisciplinary clinical and diagnostic facility. The organization is dedicated to delivering accessible, timely, coordinated, and quality healthcare across outpatient, emergency, inpatient, surgical, critical-care, paediatric, gynecological, urological, laboratory, and radiological services.
+              </p>
+              <div class="feature-callout">
+                <strong>Core Organizational Objective</strong>
+                <p>
+                  To provide comprehensive, compassionate, and standardized healthcare under one roof covering the entire care continuum: OPD ➔ Diagnostics ➔ Emergency ➔ Inpatient Care ➔ Surgery ➔ ICU/NICU/PICU ➔ Discharge &amp; Rehabilitation.
+                </p>
+              </div>
+            </div>
+
+            <!-- 2. Obstetrics & Gynaecology -->
+            <div class="scope-block" id="scope-obgyn">
+              <div class="scope-block-header">
+                <div class="scope-block-badge">2</div>
+                <div>
+                  <h3>Obstetrics &amp; Gynaecology Scope</h3>
+                  <p>Comprehensive women’s health, maternal, and perinatal care.</p>
+                </div>
+              </div>
+              <p>
+                The department of Obstetrics and Gynaecology provides continuous clinical oversight for maternal, fetal, and reproductive wellness.
+              </p>
+              <ul class="scope-check-grid">
+                <li>Outpatient consultation and clinical evaluation</li>
+                <li>Antenatal, intrapartum, and postnatal maternal care</li>
+                <li>Routine and high-risk pregnancy management</li>
+                <li>Round-the-clock obstetric emergency management</li>
+                <li>Normal and assisted vaginal deliveries</li>
+                <li>Caesarean section (elective &amp; emergency)</li>
+                <li>Infertility evaluation and specialized counselling</li>
+                <li>Management of menstrual and hormonal disorders</li>
+                <li>Minimally invasive &amp; laparoscopic gynaecological procedures</li>
+                <li>Preventive women's wellness &amp; cancer screening</li>
+                <li>Post-operative and post-delivery hospital follow-up</li>
+                <li>Collaborative neonatal support with in-house NICU</li>
+              </ul>
+            </div>
+
+            <!-- 3. General Surgery -->
+            <div class="scope-block" id="scope-surgery">
+              <div class="scope-block-header">
+                <div class="scope-block-badge">3</div>
+                <div>
+                  <h3>General &amp; Laparoscopic Surgery Scope</h3>
+                  <p>Elective and emergency surgical procedures backed by 3 modular OTs.</p>
+                </div>
+              </div>
+              <p>
+                The surgical team performs routine, complex, and emergency procedures using modern laparoscopic towers and sterile instrumentation.
+              </p>
+              <ul class="scope-check-grid">
+                <li>Comprehensive pre-operative surgical assessment</li>
+                <li>Elective and emergency abdominal surgeries</li>
+                <li>Laparoscopic and open hernia repair procedures</li>
+                <li>Emergency appendectomy and acute abdomen intervention</li>
+                <li>Gallbladder, biliary tract, and GI surgical procedures</li>
+                <li>Soft-tissue excision and minor surgical procedures</li>
+                <li>Advanced wound management and diabetic ulcer care</li>
+                <li>Post-operative critical care in coordination with ICU</li>
+                <li>Surgical follow-up, rehabilitation, and suture care</li>
+              </ul>
+            </div>
+
+            <!-- 4. Paediatric Care -->
+            <div class="scope-block" id="scope-paediatrics">
+              <div class="scope-block-header">
+                <div class="scope-block-badge">4</div>
+                <div>
+                  <h3>Paediatric Care &amp; Child Health Scope</h3>
+                  <p>Compassionate healthcare from infancy through adolescence.</p>
+                </div>
+              </div>
+              <ul class="scope-check-grid">
+                <li>Paediatric OPD consultations and child assessments</li>
+                <li>Treatment of childhood respiratory &amp; GI infections</li>
+                <li>Growth, nutritional, and milestone development screening</li>
+                <li>National immunization schedules and vaccination guidance</li>
+                <li>Paediatric emergency resuscitation and stabilization</li>
+                <li>Inpatient hospitalization for paediatric conditions</li>
+                <li>Direct integration with NICU and PICU critical units</li>
+              </ul>
+            </div>
+
+            <!-- 5. Emergency -->
+            <div class="scope-block" id="scope-emergency">
+              <div class="scope-block-header">
+                <div class="scope-block-badge">5</div>
+                <div>
+                  <h3>24×7 Emergency &amp; Trauma Department Scope</h3>
+                  <p>Round-the-clock assessment, resuscitation, and stabilization.</p>
+                </div>
+              </div>
+              <ul class="scope-check-grid">
+                <li>24×7 rapid clinical triage upon patient arrival</li>
+                <li>Trauma resuscitation for accidents and polytrauma</li>
+                <li>Management of acute medical, surgical, paediatric &amp; OB emergencies</li>
+                <li>Bedside point-of-care emergency investigations</li>
+                <li>Immediate transfer coordination to OT, ICU, or NICU</li>
+                <li>BLS / ALS equipped ambulance coordination</li>
+                <li>Referral and stabilization protocols for tertiary cases</li>
+              </ul>
+            </div>
+
+            <!-- 6. Critical Care -->
+            <div class="scope-block" id="scope-icu">
+              <div class="scope-block-header">
+                <div class="scope-block-badge">6</div>
+                <div>
+                  <h3>Critical Care: ICU, NICU &amp; PICU Scope</h3>
+                  <p>Multi-disciplinary intensive care units with invasive life-support systems.</p>
+                </div>
+              </div>
+              <div class="feature-callout">
+                <strong>ICU (Adult Intensive Care Unit)</strong>
+                <p>Equipped with modern multipara monitors, ventilators, central oxygen, defibrillators, infusion pumps, and round-the-clock intensivists for post-op, cardiac, respiratory, and sepsis cases.</p>
+              </div>
+              <div class="feature-callout">
+                <strong>NICU (Neonatal Intensive Care Unit)</strong>
+                <p>Specialized care for preterm, low-birth-weight, and jaundiced newborns with open incubators, phototherapy units, neonatal CPAP, and warmers.</p>
+              </div>
+              <div class="feature-callout">
+                <strong>PICU (Paediatric Intensive Care Unit)</strong>
+                <p>Intensive hemodynamic monitoring and advanced pediatric resuscitation for acute paediatric medical and post-surgical crises.</p>
+              </div>
+            </div>
+
+            <!-- 7. OPD -->
+            <div class="scope-block" id="scope-opd">
+              <div class="scope-block-header">
+                <div class="scope-block-badge">7</div>
+                <div>
+                  <h3>Outpatient Department (OPD) Scope</h3>
+                  <p>Specialist consultations, preventive screenings, and continuity of care.</p>
+                </div>
+              </div>
+              <ul class="scope-check-grid">
+                <li>New patient consultations and specialist evaluations</li>
+                <li>Routine clinical follow-up and review appointments</li>
+                <li>Prescription and personalized treatment planning</li>
+                <li>Fast-track coordination with diagnostic radiology and pathology</li>
+                <li>Preventive wellness packages and chronic illness reviews</li>
+                <li>Smooth transition to IPD admission when required</li>
+              </ul>
+            </div>
+
+            <!-- 8. Urology -->
+            <div class="scope-block" id="scope-urology">
+              <div class="scope-block-header">
+                <div class="scope-block-badge">8</div>
+                <div>
+                  <h3>Urology Services Scope</h3>
+                  <p>Comprehensive renal, stone, prostate, and urinary health.</p>
+                </div>
+              </div>
+              <ul class="scope-check-grid">
+                <li>Urological OPD consultations and diagnostics</li>
+                <li>Evaluation and medical/surgical management of kidney stones</li>
+                <li>Urinary tract infections (UTI) and obstruction management</li>
+                <li>Prostate health and BPH evaluation and treatment</li>
+                <li>Urological endoscopic and surgical procedures</li>
+                <li>Pre-operative, intra-operative, and post-operative follow-up</li>
+              </ul>
+            </div>
+
+            <!-- 9. Laboratory -->
+            <div class="scope-block" id="scope-lab">
+              <div class="scope-block-header">
+                <div class="scope-block-badge">9</div>
+                <div>
+                  <h3>In-House Pathology Laboratory Scope</h3>
+                  <p>Accurate, rapid diagnostic testing supporting OPD, IPD, and Emergency.</p>
+                </div>
+              </div>
+              <ul class="scope-check-grid">
+                <li>Hematology profiles (CBC, ESR, Blood Grouping, Coagulation)</li>
+                <li>Clinical Biochemistry (LFT, KFT, Lipid Profile, Blood Sugar, Electrolytes)</li>
+                <li>Clinical Pathology and comprehensive urine/stool analysis</li>
+                <li>Serology, infectious disease markers, and hormonal assays</li>
+                <li>Pre-operative profile and immediate emergency ICU lab testing</li>
+                <li>Strict internal and external quality control protocols</li>
+              </ul>
+            </div>
+
+            <!-- 10. Radiology -->
+            <div class="scope-block" id="scope-radiology">
+              <div class="scope-block-header">
+                <div class="scope-block-badge">10</div>
+                <div>
+                  <h3>Radiology &amp; Diagnostic Imaging Scope</h3>
+                  <p>24×7 imaging services with expert radiologist reporting.</p>
+                </div>
+              </div>
+              <ul class="scope-check-grid">
+                <li>24×7 high-resolution CT Scan for cranial, thoracic, and abdominal imaging</li>
+                <li>Digital X-Ray examinations with instant digital archiving</li>
+                <li>Ultrasonography (USG), Obstetric 4D scans, and Doppler evaluations</li>
+                <li>Emergency trauma imaging for accident victims</li>
+                <li>Routine pre-operative and post-operative radiological checkups</li>
+                <li>Qualified radiologist interpretations and reports</li>
+              </ul>
+            </div>
+
+            <!-- 11. OTs -->
+            <div class="scope-block" id="scope-ot">
+              <div class="scope-block-header">
+                <div class="scope-block-badge">11</div>
+                <div>
+                  <h3>3 Modular Operation Theatres (OT) Scope</h3>
+                  <p>State-of-the-art sterile surgical suites with HEPA laminar airflow.</p>
+                </div>
+              </div>
+              <ul class="scope-check-grid">
+                <li>Three sterile modular operation theatres</li>
+                <li>Laminar airflow and HEPA filters preventing surgical site infections</li>
+                <li>Full anaesthesia workstations and multi-parameter monitors</li>
+                <li>Equipped for General, Gynaecological, Urological, and Ortho surgeries</li>
+                <li>Dedicated surgical recovery rooms and CSSD sterilization facility</li>
+              </ul>
+            </div>
+
+            <!-- 12. IPD -->
+            <div class="scope-block" id="scope-ipd">
+              <div class="scope-block-header">
+                <div class="scope-block-badge">12</div>
+                <div>
+                  <h3>Inpatient (IPD) &amp; Hospitalization Scope</h3>
+                  <p>Dedicated general, semi-private, and private air-conditioned patient rooms.</p>
+                </div>
+              </div>
+              <ul class="scope-check-grid">
+                <li>Streamlined admission and discharge desks</li>
+                <li>Round-the-clock resident medical officers and nursing staff</li>
+                <li>In-house dietary food services according to medical nutrition plans</li>
+                <li>Pharmacy medication administration and vital charting</li>
+                <li>Doctor ward rounds and comprehensive discharge planning</li>
+              </ul>
+            </div>
+
+            <!-- 13. Insurance -->
+            <div class="scope-block" id="scope-tpa">
+              <div class="scope-block-header">
+                <div class="scope-block-badge">13</div>
+                <div>
+                  <h3>Insurance &amp; TPA Cashless Coordination Scope</h3>
+                  <p>Hassle-free insurance documentation and pre-authorisation assistance.</p>
+                </div>
+              </div>
+              <ul class="scope-check-grid">
+                <li>Pre-authorisation query submission with leading insurance partners</li>
+                <li>Assistance with cashless hospitalization documents</li>
+                <li>Reimbursement claim form filling and itemized billing</li>
+                <li>Dedicated TPA helpdesk team located on campus</li>
+              </ul>
+            </div>
+
+            <!-- 14. Quality -->
+            <div class="scope-block" id="scope-quality">
+              <div class="scope-block-header">
+                <div class="scope-block-badge">14</div>
+                <div>
+                  <h3>Quality, Safety &amp; NABH Compliance Scope</h3>
+                  <p>Strict patient safety protocols, infection control, and legal compliance.</p>
+                </div>
+              </div>
+              <ul class="scope-check-grid">
+                <li>International patient safety goals (IPSG) adherence</li>
+                <li>Hospital infection prevention and control program</li>
+                <li>Safe biomedical waste management as per statutory norms</li>
+                <li>Fire safety systems, emergency alarms, and evacuation plans</li>
+                <li>Strict confidentiality of patient electronic medical records (EMR)</li>
+              </ul>
+            </div>
+
+            <!-- 15. Signatory -->
+            <div class="scope-block" id="scope-signatory">
+              <div class="scope-block-header">
+                <div class="scope-block-badge">15</div>
+                <div>
+                  <h3>Official Institutional Authorization</h3>
+                  <p>Certified Scope of Healthcare Services of Sufia Healthcare Pvt. Ltd.</p>
+                </div>
+              </div>
+              <div style="background: var(--mist); border-radius: 12px; padding: 24px; border: 1px dashed var(--line);">
+                <div class="grid grid-2" style="gap: 20px;">
+                  <div>
+                    <strong style="color: var(--navy-950); display: block; margin-bottom: 4px;">Institution:</strong>
+                    <span style="color: var(--slate); font-size: 0.9rem;">Sufia Healthcare Pvt. Ltd.</span>
+                  </div>
+                  <div>
+                    <strong style="color: var(--navy-950); display: block; margin-bottom: 4px;">Hospital Campus:</strong>
+                    <span style="color: var(--slate); font-size: 0.9rem;">Hussaini More, Bindusar, Siwan, Bihar - 841227</span>
+                  </div>
+                  <div>
+                    <strong style="color: var(--navy-950); display: block; margin-bottom: 4px;">Contact &amp; Emergency:</strong>
+                    <span style="color: var(--slate); font-size: 0.9rem;">+91 70918 41444 / +91 70918 45777</span>
+                  </div>
+                  <div>
+                    <strong style="color: var(--navy-950); display: block; margin-bottom: 4px;">Official Verification:</strong>
+                    <span style="color: var(--cyan-700); font-size: 0.9rem; font-weight: 700;">Authorized Medical Superintendent</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= EMERGENCY BANNER ================= -->
+    <section class="sf-section tight">
+      <div class="wrap">
+        <div class="emergency-banner">
+          <div>
+            <span class="eyebrow" style="background: rgba(226, 87, 61, 0.2); color: #ffb3a1">
+              24/7 LEVEL-1 TRAUMA &amp; ICU
+            </span>
+            <h3 style="margin-top: 6px">Need Immediate Emergency Medical Care?</h3>
+            <p>Rapid response ambulance fleet equipped with mobile ICU and advanced resuscitation units.</p>
+          </div>
+          <div>
+            <a href="tel:+917091841444" class="btn btn-coral" style="padding: 16px 32px; font-size: 1.05rem">
+              🚨 Call Emergency: +91 70918 41444 / +91 70918 45777
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer loaded dynamically -->
+    <div id="site-footer"></div>
+
+    <!-- Scripts -->
+    <script src="js/components.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/language.js"></script>
+    <script>
+      // Quick search filter for department cards
+      document.getElementById('deptSearchInput')?.addEventListener('input', function (e) {
+        const query = e.target.value.toLowerCase().trim();
+        const cards = document.querySelectorAll('#deptCardGrid .dept-card');
+        cards.forEach((card) => {
+          const text = card.textContent.toLowerCase();
+          const keywords = (card.getAttribute('data-keywords') || '').toLowerCase();
+          if (!query || text.includes(query) || keywords.includes(query)) {
+            card.style.display = '';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+
+      // Sticky sidebar active state tracking on scroll
+      window.addEventListener('scroll', () => {
+        const blocks = document.querySelectorAll('.scope-block');
+        const navLinks = document.querySelectorAll('.scope-nav-links a');
+        let current = '';
+        blocks.forEach((block) => {
+          const top = block.offsetTop - 140;
+          if (window.pageYOffset >= top) {
+            current = block.getAttribute('id');
+          }
+        });
+        navLinks.forEach((link) => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === '#' + current) {
+            link.classList.add('active');
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

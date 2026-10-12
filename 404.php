@@ -1,0 +1,408 @@
+<?php
+http_response_code(404);
+?>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404 · Page Not Found | Sufia Healthcare Siwan</title>
+    <meta
+      name="description"
+      content="The requested page could not be found on Sufia Healthcare portal. Explore our hospital services, find doctors, or return to home."
+    />
+    <link rel="stylesheet" href="css/premium.css" />
+    <link rel="icon" type="image/svg+xml" href="assets/img/favicon.ico" />
+    <style>
+      .error-hero {
+        padding: 60px 20px 80px;
+        background: radial-gradient(circle at 50% 20%, rgba(14, 171, 163, 0.08) 0%, rgba(11, 37, 69, 0.02) 60%, transparent 100%), var(--mist, #f5f8fa);
+        min-height: calc(100vh - 180px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .error-card {
+        background: #ffffff;
+        border: 1px solid var(--line, #e3e9ef);
+        border-radius: 28px;
+        box-shadow: 0 20px 50px rgba(11, 37, 69, 0.08);
+        max-width: 820px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 50px 40px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+      .error-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 6px;
+        background: linear-gradient(90deg, #0eaba3, #3fc7bd, #0a8f8a);
+      }
+      .error-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: rgba(14, 171, 163, 0.12);
+        color: #087570;
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        padding: 6px 16px;
+        border-radius: 999px;
+        margin-bottom: 20px;
+        border: 1px solid rgba(14, 171, 163, 0.25);
+      }
+      .error-pill .dot {
+        width: 8px;
+        height: 8px;
+        background: #0eaba3;
+        border-radius: 50%;
+        animation: pulseDot 2s infinite ease-in-out;
+      }
+      @keyframes pulseDot {
+        0%, 100% { transform: scale(1); opacity: 1; }
+        50% { transform: scale(1.4); opacity: 0.6; }
+      }
+      .error-code-wrap {
+        position: relative;
+        display: inline-block;
+        margin-bottom: 12px;
+      }
+      .error-code-bg {
+        font-size: clamp(5.5rem, 14vw, 9.5rem);
+        font-weight: 900;
+        font-family: var(--font-display, "Fraunces", Georgia, serif);
+        line-height: 1;
+        letter-spacing: -0.04em;
+        background: linear-gradient(135deg, #0b2545 25%, #0eaba3 75%, #3fc7bd 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin: 0;
+        filter: drop-shadow(0 10px 24px rgba(14, 171, 163, 0.2));
+      }
+      .error-title {
+        font-size: clamp(1.4rem, 3vw, 1.95rem);
+        font-weight: 700;
+        color: var(--navy-900, #0b2545);
+        margin: 0 0 12px;
+        font-family: var(--font-body, "Inter", sans-serif);
+      }
+      .error-subtitle {
+        font-size: 1.02rem;
+        color: var(--slate, #647186);
+        max-width: 580px;
+        margin: 0 auto 28px;
+        line-height: 1.6;
+      }
+      .error-subtitle strong {
+        color: var(--navy-900, #0b2545);
+        font-weight: 600;
+      }
+      .error-hin-sub {
+        font-size: 0.92rem;
+        color: #8c9ba5;
+        margin-top: 6px;
+        display: block;
+      }
+      .error-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 35px;
+      }
+      .btn-err-primary {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: linear-gradient(135deg, #0eaba3 0%, #087570 100%);
+        color: #ffffff;
+        font-weight: 600;
+        font-size: 0.95rem;
+        padding: 13px 26px;
+        border-radius: 12px;
+        text-decoration: none;
+        box-shadow: 0 6px 20px rgba(14, 171, 163, 0.35);
+        transition: all 0.2s ease;
+      }
+      .btn-err-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 26px rgba(14, 171, 163, 0.45);
+        color: #ffffff;
+      }
+      .btn-err-secondary {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: #0b2545;
+        color: #ffffff;
+        font-weight: 600;
+        font-size: 0.95rem;
+        padding: 13px 24px;
+        border-radius: 12px;
+        text-decoration: none;
+        box-shadow: 0 4px 14px rgba(11, 37, 69, 0.2);
+        transition: all 0.2s ease;
+      }
+      .btn-err-secondary:hover {
+        background: #143763;
+        transform: translateY(-2px);
+        color: #ffffff;
+      }
+      .btn-err-ghost {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: #f8fafc;
+        border: 1px solid var(--line, #e3e9ef);
+        color: var(--navy-900, #0b2545);
+        font-weight: 600;
+        font-size: 0.92rem;
+        padding: 12px 20px;
+        border-radius: 12px;
+        text-decoration: none;
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+      .btn-err-ghost:hover {
+        background: #eef2f6;
+        border-color: #cbd5e1;
+      }
+      .quick-nav-box {
+        background: #f8fafc;
+        border: 1px solid var(--line, #e3e9ef);
+        border-radius: 18px;
+        padding: 24px;
+        text-align: left;
+        margin-top: 10px;
+      }
+      .quick-nav-header {
+        font-size: 0.82rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        font-weight: 700;
+        color: var(--slate, #647186);
+        margin-bottom: 16px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .quick-links-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 12px;
+      }
+      .quick-link-card {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 12px 14px;
+        background: #ffffff;
+        border: 1px solid var(--line, #e3e9ef);
+        border-radius: 12px;
+        text-decoration: none;
+        color: var(--navy-900, #0b2545);
+        font-size: 0.88rem;
+        font-weight: 600;
+        transition: all 0.2s ease;
+      }
+      .quick-link-card:hover {
+        border-color: #0eaba3;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(14, 171, 163, 0.12);
+        color: #087570;
+      }
+      .quick-link-card .ql-icon {
+        width: 34px;
+        height: 34px;
+        border-radius: 8px;
+        background: rgba(14, 171, 163, 0.12);
+        color: #087570;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+      .helpline-strip {
+        margin-top: 24px;
+        padding-top: 18px;
+        border-top: 1px dashed var(--line, #e3e9ef);
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        font-size: 0.86rem;
+        color: var(--slate, #647186);
+      }
+      .helpline-strip strong {
+        color: var(--navy-900, #0b2545);
+      }
+      .helpline-link {
+        color: #0eaba3;
+        font-weight: 700;
+        text-decoration: none;
+      }
+      .helpline-link:hover {
+        text-decoration: underline;
+      }
+      @media (max-width: 640px) {
+        .error-card {
+          padding: 36px 20px;
+        }
+        .error-actions {
+          flex-direction: column;
+          width: 100%;
+        }
+        .btn-err-primary, .btn-err-secondary, .btn-err-ghost {
+          width: 100%;
+          justify-content: center;
+        }
+        .helpline-strip {
+          flex-direction: column;
+          text-align: center;
+        }
+      }
+    </style>
+  </head>
+
+  <body class="sf">
+    <!-- Header loaded dynamically -->
+    <div id="site-header"></div>
+
+    <!-- Main 404 Hero Section -->
+    <main class="error-hero">
+      <div class="wrap">
+        <div class="error-card">
+          <!-- Pill Badge -->
+          <div class="error-pill">
+            <span class="dot"></span>
+            <span>Error 404 · Page Not Found</span>
+          </div>
+
+          <!-- 404 Big Display -->
+          <div class="error-code-wrap">
+            <div class="error-code-bg">404</div>
+          </div>
+
+          <!-- Heading -->
+          <h1 class="error-title">Oops! This Page is Unavailable or Moved</h1>
+          
+          <p class="error-subtitle">
+            The page you are looking for might have been removed, had its name changed, or the address entered is incorrect.
+            <span class="error-hin-sub">Aap jis page ko dhoondh rahe hain wo uplabdh nahi hai ya link me koi galti ho sakti hai.</span>
+          </p>
+
+          <!-- Action Buttons -->
+          <div class="error-actions">
+            <a href="index.html" class="btn-err-ghost">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+              </svg>
+              <span>Back to Home Page</span>
+            </a>
+
+            <button type="button" onclick="history.back()" class="btn-err-ghost">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="19" y1="12" x2="5" y2="12"></line>
+                <polyline points="12 19 5 12 12 5"></polyline>
+              </svg>
+              <span>Previous Page</span>
+            </button>
+          </div>
+
+          <!-- Quick Navigation Cards -->
+          <div class="quick-nav-box">
+            <div class="quick-nav-header">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+              </svg>
+              <span>Explore Key Hospital Sections:</span>
+            </div>
+
+            <div class="quick-links-grid">
+              <a href="doctors.html" class="quick-link-card">
+                <div class="ql-icon">
+                  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                  </svg>
+                </div>
+                <div>
+                  <div>Find Doctors</div>
+                  <small style="color: #647186; font-size: 0.72rem; font-weight: 500;">OPD Timings</small>
+                </div>
+              </a>
+
+              <a href="departments.html" class="quick-link-card">
+                <div class="ql-icon">
+                  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                  </svg>
+                </div>
+                <div>
+                  <div>Departments</div>
+                  <small style="color: #647186; font-size: 0.72rem; font-weight: 500;">Specialities</small>
+                </div>
+              </a>
+
+              <a href="careers.php" class="quick-link-card">
+                <div class="ql-icon">
+                  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                    <path d="M16 3v4M8 3v4"></path>
+                  </svg>
+                </div>
+                <div>
+                  <div>Careers</div>
+                  <small style="color: #647186; font-size: 0.72rem; font-weight: 500;">Job Openings</small>
+                </div>
+              </a>
+
+              <a href="emergency.html" class="quick-link-card">
+                <div class="ql-icon" style="background: rgba(226, 87, 61, 0.12); color: #d9482f;">
+                  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                  </svg>
+                </div>
+                <div>
+                  <div>Emergency</div>
+                  <small style="color: #d9482f; font-size: 0.72rem; font-weight: 600;">24x7 Trauma</small>
+                </div>
+              </a>
+            </div>
+
+            <!-- Helpline strip -->
+            <div class="helpline-strip">
+              <div>
+                <span>Need urgent assistance? </span>
+                <strong>Call Hospital Helpdesk: </strong>
+                <a href="tel:+917091841444" class="helpline-link">+91 70918 41444</a> / <a href="tel:+917091845777" class="helpline-link">+91 70918 45777</a>
+              </div>
+              <div>
+                <a href="contact.html" class="helpline-link">Hospital Map & Directions →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer loaded dynamically -->
+    <div id="site-footer"></div>
+
+    <script src="js/components.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>

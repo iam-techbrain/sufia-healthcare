@@ -1,0 +1,17 @@
+# Block direct public download of SQLite database file
+<Files "*.sqlite">
+    Order allow,deny
+    Deny from all
+</Files>
+
+<Files "database.sqlite">
+    Order allow,deny
+    Deny from all
+</Files>
+
+# Apache 2.4+ compatibility
+<IfModule mod_authz_core.c>
+    <Files "*.sqlite">
+        Require all denied
+    </Files>
+</IfModule>

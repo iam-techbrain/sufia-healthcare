@@ -1,0 +1,888 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portal Access & Sign In | Sufia Healthcare</title>
+    <meta
+      name="description"
+      content="Secure Multi-Role Patient, Doctor, Staff and Administrator Login Portal for Sufia Healthcare Super-Specialty Hospital."
+    />
+    <link rel="stylesheet" href="css/premium.css" />
+    <link rel="icon" type="image/svg+xml" href="assets/img/favicon.ico" />
+  </head>
+
+  <body class="sf">
+    <!-- ================= TOP BAR ================= -->
+    <div class="topbar">
+      <div class="wrap">
+        <a href="emergency.html" class="tb-emergency">
+          <span class="tb-pulse"></span>
+          <svg
+            width="14"
+            height="14"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+          >
+            <path
+              d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"
+            />
+          </svg>
+          24×7 Emergency Helpline: +91 120 4200 400
+        </a>
+        <div class="tb-right">
+          <span>Mon–Sat · 8:00 AM – 9:00 PM</span>
+          <!-- <a href="patient-portal.html" class="tb-link-accent">
+            <svg
+              width="13"
+              height="13"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+              <circle cx="12" cy="7" r="4" />
+            </svg>
+            Patient Portal
+          </a> -->
+          <a href="contact.html">Locations & Directions</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================= HEADER ================= -->
+    <header class="sf-header">
+      <div class="wrap nav-row">
+        <a
+          href="index.html"
+          class="brand"
+          aria-label="Sufia Healthcare Homepage"
+        >
+          <img
+            src="assets/img/logo-sufia.png"
+            alt="Sufia Healthcare - Multi-Specialty Hospital"
+          />
+        </a>
+        <nav class="main-nav">
+          <a href="index.html">Home</a>
+          <a href="index.html#about">About</a>
+          <a href="doctors.html">Doctors</a>
+          <a href="specialities.html">Departments</a>
+          <a href="index.html#packages">Health Packages</a>
+          <a
+            href="emergency.html"
+            style="color: var(--coral-600); font-weight: 700"
+            >Emergency</a
+          >
+          <a href="contact.html">Contact</a>
+        </nav>
+        <div class="nav-cta">
+          <div class="language-switcher">
+            <label for="siteLanguage" class="sr-only">Language</label>
+            <select
+              id="siteLanguage"
+              class="language-select"
+              aria-label="Select website language"
+            >
+              <option value="en">English</option>
+              <option value="hi">हिंदी</option>
+            </select>
+          </div>
+          <a href="contact.html" class="btn btn-cyan btn-sm"
+            >Book Appointment</a
+          >
+          <button class="burger" aria-label="Toggle Navigation Menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- ================= PAGE HERO ================= -->
+    <section class="page-hero">
+      <div class="wrap text-center">
+        <span
+          class="eyebrow"
+          style="background: rgba(14, 171, 163, 0.15); color: var(--cyan-400)"
+          >SECURE PORTAL ACCESS</span
+        >
+        <h1>Unified Hospital Management Login</h1>
+        <p class="lead" style="margin: 12px auto 0">
+          Access patient records, doctor OPD schedules, staff roster, or
+          administrative controls based on your portal authorization.
+        </p>
+      </div>
+    </section>
+
+    <!-- ================= MAIN LOGIN CONTAINER ================= -->
+    <section class="sf-section tight on-mist">
+      <div class="wrap">
+        <div class="login-card">
+          <!-- Role Selection Tabs -->
+          <div class="role-tabs">
+            <div
+              class="role-tab active tab-patient"
+              id="tabPatient"
+              onclick="switchRole('patient')"
+            >
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                <circle cx="12" cy="7" r="4" />
+              </svg>
+              Patient
+            </div>
+            <div
+              class="role-tab tab-staff"
+              id="tabStaff"
+              onclick="switchRole('staff')"
+            >
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                <circle cx="8.5" cy="7" r="4" />
+                <polyline points="17 11 19 13 23 9" />
+              </svg>
+              Doctor / Staff
+            </div>
+            <div
+              class="role-tab tab-admin"
+              id="tabAdmin"
+              onclick="switchRole('admin')"
+            >
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+              </svg>
+              Admin
+            </div>
+          </div>
+
+          <div class="login-body">
+            <!-- Demo Autofill Box -->
+            <div class="demo-credentials-box" id="demoBox">
+              <b>💡 Quick Demo Login Options:</b>
+              <div id="demoChipContainer">
+                <span class="demo-btn-chip" onclick="fillDemo('patient')"
+                  >🔑 Test Patient Login</span
+                >
+                <span class="demo-btn-chip" onclick="fillDemo('doctor')"
+                  >👨‍⚕️ Test Doctor Login</span
+                >
+                <span class="demo-btn-chip" onclick="fillDemo('admin')"
+                  >⚙️ Test Admin Login</span
+                >
+              </div>
+            </div>
+
+            <!-- Dynamic Role Form -->
+            <form id="authForm" onsubmit="handleAuthSubmit(event)">
+              <div class="form-group">
+                <label id="lblIdentifier"
+                  >Mobile Number or Booking Ref ID</label
+                >
+                <input
+                  type="text"
+                  id="inputIdentifier"
+                  placeholder="e.g. +91 98765 43210 or SF-88219"
+                  required
+                />
+              </div>
+
+              <div class="form-group" id="deptGroup" style="display: none">
+                <label>Department / Clinical Division</label>
+                <select id="selectDept">
+                  <option value="cardiology">
+                    Cardiology & Cardiac Sciences
+                  </option>
+                  <option value="neurology">Neurosurgery & Spine</option>
+                  <option value="orthopedics">Orthopaedics & Joint</option>
+                  <option value="pediatrics">Pediatrics & Neonatology</option>
+                  <option value="opd_staff">OPD Nursing & Reception</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label id="lblSecret">
+                  <span>Password or OTP</span>
+                  <a
+                    href="#"
+                    onclick="
+                      alert('Demo OTP sent: 123456');
+                      return false;
+                    "
+                    style="
+                      font-weight: 500;
+                      color: var(--cyan-600);
+                      font-size: 0.78rem;
+                    "
+                    >Get OTP</a
+                  >
+                </label>
+                <input
+                  type="password"
+                  id="inputSecret"
+                  placeholder="Enter password or 6-digit OTP"
+                  required
+                />
+              </div>
+
+              <div
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                  margin-bottom: 24px;
+                "
+              >
+                <label
+                  style="
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                    font-size: 0.84rem;
+                    cursor: pointer;
+                  "
+                >
+                  <input
+                    type="checkbox"
+                    checked
+                    style="accent-color: var(--cyan-600); width: auto"
+                  />
+                  Keep me logged in
+                </label>
+                <a
+                  href="#"
+                  onclick="
+                    alert(
+                      'Password reset link sent to registered email/phone.',
+                    );
+                    return false;
+                  "
+                  style="
+                    font-size: 0.82rem;
+                    color: var(--cyan-600);
+                    font-weight: 600;
+                  "
+                  >Forgot Password?</a
+                >
+              </div>
+
+              <button
+                type="submit"
+                class="btn btn-cyan btn-full"
+                id="btnAuthSubmit"
+              >
+                Sign In to Patient Portal →
+              </button>
+            </form>
+
+            <!-- Auth Status Alert Area -->
+            <div
+              id="authStatusMsg"
+              style="margin-top: 20px; display: none"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="sf-footer">
+      <div class="wrap">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <div class="footer-brand-img">
+              <img src="assets/img/logo-sufia.png" alt="Sufia Healthcare" />
+            </div>
+            <p style="margin-bottom: 10px">
+              Sufia Super Speciality Hospital is dedicated to delivering
+              high-quality, accessible, and reliable medical services.
+            </p>
+            <div
+              style="
+                font-size: 0.83rem;
+                color: #a9b8cc;
+                display: grid;
+                gap: 4px;
+              "
+            >
+              <div>📍 Hussaini More, Bindusar, Siwan, Bihar 841227</div>
+              <div>✉️ sufiahealthcare26@gmail.com</div>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h5>Patient Care</h5>
+            <ul>
+              <li><a href="doctors.html">Find a Doctor</a></li>
+              <li><a href="contact.html">Book Appointment</a></li>
+              <li><a href="specialities.html">Departments</a></li>
+              <li><a href="patient-portal.html">Track Booking</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h5>Portal Access</h5>
+            <ul>
+              <li><a href="login.html">Patient Login</a></li>
+              <li><a href="login.html">Doctor OPD Portal</a></li>
+              <li><a href="login.html">Staff Console</a></li>
+              <li><a href="login.html">Admin Dashboard</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h5>Emergency</h5>
+            <ul>
+              <li><a href="emergency.html">24x7 Ambulance</a></li>
+              <li><a href="emergency.html">Trauma Care Center</a></li>
+              <li><a href="contact.html">Hospital Location</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h5>Location : Sufia Memorial Hospital</h5>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d916230.243349504!2d83.14606817812499!3d26.22839709999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3992fc054a98385b%3A0x2f0715d2b6ddf3fb!2sSufia%20Memorial%20Hospital!5e0!3m2!1sen!2sin!4v1787139858578!5m2!1sen!2sin"
+              width="280"
+              height="130"
+              style="
+                border: 0;
+                border-radius: 14px;
+                box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+              "
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="strict-origin-when-cross-origin"
+            ></iframe>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <div>© 2026 Sufia Healthcare. All rights reserved.</div>
+          <div>Sufia Healthcare Super Specialty Hospital</div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- App data/content kept in HTML; JavaScript only controls behaviour -->
+    <div id="sufiaDoctorData" hidden aria-hidden="true">
+      <div
+        class="sufia-doctor-data"
+        data-id="doc-1"
+        data-name="Dr. Nilesh Mishra"
+        data-dept="Orthopaedics &amp; Spine"
+        data-qual="Senior Consultant - Orthopaedics | DNB, DO, MBBS"
+        data-exp="20+ Yrs"
+        data-fee="₹900"
+        data-rating="4.9 ★★★★★"
+        data-image="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&amp;fit=crop&amp;w=600&amp;q=80"
+      >
+        <span
+          class="sufia-branch-data"
+          data-name="SUFIA HEALTHCARE Nelson Manickam Road, Chennai"
+          data-slots="36"
+          data-next="Tomorrow 09:00 AM"
+        ></span>
+        <span
+          class="sufia-branch-data"
+          data-name="SUFIA HEALTHCARE Alwarpet, Chennai"
+          data-slots="18"
+          data-next="Tomorrow 02:30 PM"
+        ></span>
+      </div>
+      <div
+        class="sufia-doctor-data"
+        data-id="doc-2"
+        data-name="Dr. Vineesh Mathur"
+        data-dept="Spine Surgery"
+        data-qual="Director - Spine Surgery Unit | MS (Ortho), FRCS"
+        data-exp="38+ Yrs"
+        data-fee="₹1,500"
+        data-rating="5.0 ★★★★★"
+        data-image="https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&amp;fit=crop&amp;w=600&amp;q=80"
+      >
+        <span
+          class="sufia-branch-data"
+          data-name="SUFIA HEALTHCARE Nelson Manickam Road, Chennai"
+          data-slots="24"
+          data-next="Tomorrow 10:20 AM"
+        ></span>
+      </div>
+      <div
+        class="sufia-doctor-data"
+        data-id="doc-3"
+        data-name="Dr. Vipin Chand Tyagi"
+        data-dept="Orthopaedics &amp; Joint Replacement"
+        data-qual="Senior Director - Joint Replacement &amp; Arthroscopy"
+        data-exp="27+ Yrs"
+        data-fee="₹1,500"
+        data-rating="4.8 ★★★★★"
+        data-image="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&amp;fit=crop&amp;w=600&amp;q=80"
+      >
+        <span
+          class="sufia-branch-data"
+          data-name="SUFIA HEALTHCARE Alwarpet, Chennai"
+          data-slots="42"
+          data-next="Tomorrow 12:30 PM"
+        ></span>
+      </div>
+      <div
+        class="sufia-doctor-data"
+        data-id="doc-4"
+        data-name="Dr. Madan Mohan B"
+        data-dept="Cardiac Sciences"
+        data-qual="Senior Consultant - Interventional Cardiology"
+        data-exp="25+ Yrs"
+        data-fee="₹1,200"
+        data-rating="4.9 ★★★★★"
+        data-image="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&amp;fit=crop&amp;w=600&amp;q=80"
+      >
+        <span
+          class="sufia-branch-data"
+          data-name="SUFIA HEALTHCARE Nelson Manickam Road, Chennai"
+          data-slots="15"
+          data-next="Today 04:00 PM"
+        ></span>
+      </div>
+      <div
+        class="sufia-doctor-data"
+        data-id="doc-5"
+        data-name="Dr. Arcot Jaishree Gajaraj"
+        data-dept="Obstetrics &amp; Gynaecology"
+        data-qual="Senior Director - Obstetrics &amp; High Risk Pregnancy | FRCS, FRCOG"
+        data-exp="35+ Yrs"
+        data-fee="₹1,500"
+        data-rating="5.0 ★★★★★"
+        data-image="https://images.unsplash.com/photo-1594824813566-88855ce75341?auto=format&amp;fit=crop&amp;w=600&amp;q=80"
+      >
+        <span
+          class="sufia-branch-data"
+          data-name="SUFIA HEALTHCARE Alwarpet, Chennai"
+          data-slots="28"
+          data-next="Tomorrow 11:00 AM"
+        ></span>
+      </div>
+      <div
+        class="sufia-doctor-data"
+        data-id="doc-6"
+        data-name="Dr. Prashanth R"
+        data-dept="Heart &amp; Lung Transplant"
+        data-qual="Director - Organ Transplant &amp; ECMO Specialist | MCh (CTVS)"
+        data-exp="22+ Yrs"
+        data-fee="₹2,000"
+        data-rating="5.0 ★★★★★"
+        data-image="https://images.unsplash.com/photo-1582750433449-648ed127bb54?auto=format&amp;fit=crop&amp;w=600&amp;q=80"
+      >
+        <span
+          class="sufia-branch-data"
+          data-name="SUFIA HEALTHCARE Nelson Manickam Road, Chennai"
+          data-slots="12"
+          data-next="Today 05:30 PM"
+        ></span>
+      </div>
+      <div
+        class="sufia-doctor-data"
+        data-id="doc-7"
+        data-name="Dr. Meenakshi Sundaram"
+        data-dept="Neurosurgery &amp; Spine"
+        data-qual="Senior Consultant - Brain &amp; Micro Neurosurgery | DNB (Neuro)"
+        data-exp="24+ Yrs"
+        data-fee="₹1,400"
+        data-rating="4.9 ★★★★★"
+        data-image="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&amp;fit=crop&amp;w=600&amp;q=80"
+      >
+        <span
+          class="sufia-branch-data"
+          data-name="SUFIA HEALTHCARE Nelson Manickam Road, Chennai"
+          data-slots="20"
+          data-next="Tomorrow 09:30 AM"
+        ></span>
+      </div>
+      <div
+        class="sufia-doctor-data"
+        data-id="doc-8"
+        data-name="Dr. Rajesh Kumar Sharma"
+        data-dept="Oncology &amp; Cancer Care"
+        data-qual="Chief Surgical Oncologist | MS, MCh (Surgical Oncology)"
+        data-exp="30+ Yrs"
+        data-fee="₹1,800"
+        data-rating="4.9 ★★★★★"
+        data-image="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&amp;fit=crop&amp;w=600&amp;q=80"
+      >
+        <span
+          class="sufia-branch-data"
+          data-name="SUFIA HEALTHCARE Alwarpet, Chennai"
+          data-slots="16"
+          data-next="Tomorrow 03:00 PM"
+        ></span>
+      </div>
+    </div>
+
+    <template id="searchNoResultsTemplate">
+      <div
+        style="
+          padding: 16px;
+          text-align: center;
+          color: #64748b;
+          font-size: 0.9rem;
+        "
+      >
+        No specialist doctor found for “<strong data-field="query"></strong>”.
+        Try searching for Cardiac, Ortho, Spine, or Gynaec.
+      </div>
+    </template>
+
+    <template id="searchResultTemplate">
+      <div class="search-result-item">
+        <img data-field="image" class="search-result-avatar" alt="Doctor" />
+        <div>
+          <div class="search-result-title" data-field="name"></div>
+          <div class="search-result-sub">
+            <span data-field="qual"></span> •
+            <span
+              data-field="dept"
+              style="color: #008080; font-weight: 700"
+            ></span>
+          </div>
+        </div>
+        <div style="margin-left: auto">
+          <span
+            data-field="fee"
+            style="
+              background: #e6f5f5;
+              color: #008080;
+              padding: 4px 10px;
+              border-radius: 20px;
+              font-size: 0.75rem;
+              font-weight: 700;
+            "
+          ></span>
+        </div>
+      </div>
+    </template>
+
+    <div
+      id="doctorBookingDrawer"
+      class="booking-drawer-modal"
+      aria-hidden="true"
+    >
+      <div class="drawer-content">
+        <div
+          style="
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 24px;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 16px;
+          "
+        >
+          <div style="display: flex; gap: 16px; align-items: center">
+            <img
+              data-drawer="image"
+              style="
+                width: 76px;
+                height: 76px;
+                border-radius: 16px;
+                object-fit: cover;
+                border: 3px solid #008080;
+                box-shadow: 0 4px 12px rgba(0, 128, 128, 0.2);
+              "
+              alt="Doctor"
+            />
+            <div>
+              <h3
+                data-drawer="name"
+                style="font-size: 1.3rem; color: #0f172a; margin-bottom: 2px"
+              ></h3>
+              <div
+                data-drawer="qual"
+                style="font-size: 0.85rem; color: #64748b; margin-bottom: 4px"
+              ></div>
+              <div
+                style="
+                  display: flex;
+                  gap: 10px;
+                  font-size: 0.8rem;
+                  font-weight: 700;
+                "
+              >
+                <span style="color: #008080"
+                  >Exp: <span data-drawer="exp"></span></span
+                ><span style="color: #64748b">•</span>
+                <span data-drawer="rating" style="color: #f59e0b"></span
+                ><span style="color: #64748b">•</span>
+                <span style="color: #0f172a"
+                  >Fee: <span data-drawer="fee"></span
+                ></span>
+              </div>
+            </div>
+          </div>
+          <button
+            type="button"
+            data-action="close-drawer"
+            style="
+              background: #f1f5f9;
+              border: none;
+              font-size: 1.5rem;
+              cursor: pointer;
+              color: #64748b;
+              width: 36px;
+              height: 36px;
+              border-radius: 50%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            "
+          >
+            &times;
+          </button>
+        </div>
+        <div class="drawer-tabs">
+          <div class="drawer-tab-btn" data-mode="in-hospital">
+            🏥 In-Hospital Consultation
+          </div>
+          <div class="drawer-tab-btn" data-mode="video">
+            📹 Online Video Consultation
+          </div>
+        </div>
+        <div
+          style="
+            font-weight: 800;
+            font-size: 0.95rem;
+            margin-bottom: 12px;
+            color: #0f172a;
+          "
+        >
+          1. Select Preferred Consultation Date:
+        </div>
+        <div class="slot-day-selector">
+          <div class="slot-day-card" data-date="Today">
+            <div class="slot-day-name">Today</div>
+            <div class="slot-day-count">12 Slots Free</div>
+          </div>
+          <div class="slot-day-card" data-date="Tomorrow">
+            <div class="slot-day-name">Tomorrow</div>
+            <div class="slot-day-count">36 Slots Free</div>
+          </div>
+          <div class="slot-day-card" data-date="Day After">
+            <div class="slot-day-name">Day After</div>
+            <div class="slot-day-count">28 Slots Free</div>
+          </div>
+        </div>
+        <div
+          style="
+            font-weight: 800;
+            font-size: 0.95rem;
+            margin-bottom: 12px;
+            color: #0f172a;
+          "
+        >
+          2. Select Available Time Slot:
+        </div>
+        <div class="time-slots-grid">
+          <button
+            type="button"
+            class="time-slot-btn"
+            data-time="09:00 AM - 10:00 AM"
+          >
+            🌅 09:00 AM
+          </button>
+          <button
+            type="button"
+            class="time-slot-btn"
+            data-time="10:30 AM - 11:30 AM"
+          >
+            🌅 10:30 AM
+          </button>
+          <button
+            type="button"
+            class="time-slot-btn"
+            data-time="12:00 PM - 01:00 PM"
+          >
+            ☀️ 12:00 PM
+          </button>
+          <button
+            type="button"
+            class="time-slot-btn"
+            data-time="02:30 PM - 03:30 PM"
+          >
+            ☀️ 02:30 PM
+          </button>
+          <button
+            type="button"
+            class="time-slot-btn"
+            data-time="04:30 PM - 05:30 PM"
+          >
+            🌆 04:30 PM
+          </button>
+          <button
+            type="button"
+            class="time-slot-btn"
+            data-time="06:00 PM - 07:00 PM"
+          >
+            🌙 06:00 PM
+          </button>
+        </div>
+        <div
+          style="
+            font-weight: 800;
+            font-size: 0.95rem;
+            margin-bottom: 12px;
+            color: #0f172a;
+          "
+        >
+          3. Choose Hospital Branch &amp; Reserve:
+        </div>
+        <div data-drawer="branches"></div>
+      </div>
+    </div>
+
+    <template id="branchSlotTemplate">
+      <div class="branch-slot-box">
+        <div
+          style="
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+          "
+        >
+          <div class="branch-name">
+            🏥 <span data-field="branch-name"></span>
+          </div>
+          <span
+            style="
+              background: #dcfce7;
+              color: #166534;
+              font-size: 0.78rem;
+              font-weight: 800;
+              padding: 4px 12px;
+              border-radius: 20px;
+            "
+            ><span data-field="branch-slots"></span> Slots Free</span
+          >
+        </div>
+        <div class="branch-avail">
+          ⚡ Next Available: <strong data-field="branch-next"></strong>
+        </div>
+        <div style="margin-top: 12px; text-align: right">
+          <span style="color: #008080; font-weight: 800; font-size: 0.88rem"
+            >Proceed to Patient Details &rarr;</span
+          >
+        </div>
+      </div>
+    </template>
+
+    <script src="js/app.js"></script>
+    <script>
+      let currentRole = "patient";
+
+      function switchRole(role) {
+        currentRole = role;
+        document
+          .querySelectorAll(".role-tab")
+          .forEach((t) => t.classList.remove("active"));
+
+        const tabEl = document.getElementById(
+          "tab" + role.charAt(0).toUpperCase() + role.slice(1),
+        );
+        if (tabEl) tabEl.classList.add("active");
+
+        const lblId = document.getElementById("lblIdentifier");
+        const inputId = document.getElementById("inputIdentifier");
+        const deptGroup = document.getElementById("deptGroup");
+        const btnSub = document.getElementById("btnAuthSubmit");
+
+        if (role === "patient") {
+          lblId.textContent = "Mobile Number or Booking Ref ID";
+          inputId.placeholder = "e.g. +91 98765 43210 or SF-88219";
+          deptGroup.style.display = "none";
+          btnSub.textContent = "Sign In to Patient Portal →";
+          btnSub.className = "btn btn-cyan btn-full";
+        } else if (role === "staff") {
+          lblId.textContent = "Doctor ID or Staff Email";
+          inputId.placeholder = "e.g. DOC-DR-RAHUL or staff@sufiahealth.com";
+          deptGroup.style.display = "flex";
+          btnSub.textContent = "Sign In to Clinical Staff Portal →";
+          btnSub.className = "btn btn-navy btn-full";
+        } else if (role === "admin") {
+          lblId.textContent = "Administrator Access ID";
+          inputId.placeholder = "e.g. ADMIN-SYS-01";
+          deptGroup.style.display = "none";
+          btnSub.textContent = "Authenticate Hospital Admin Console →";
+          btnSub.className = "btn btn-coral btn-full";
+        }
+      }
+
+      function fillDemo(role) {
+        switchRole(role);
+        const inputId = document.getElementById("inputIdentifier");
+        const inputSec = document.getElementById("inputSecret");
+
+        if (role === "patient") {
+          inputId.value = "+91 98765 43210";
+          inputSec.value = "123456";
+        } else if (role === "doctor") {
+          inputId.value = "DOC-DR-RAHUL";
+          inputSec.value = "doctorPass2026!";
+        } else if (role === "admin") {
+          inputId.value = "ADMIN-SYS-01";
+          inputSec.value = "adminMasterKey#2026";
+        }
+      }
+
+      function handleAuthSubmit(e) {
+        e.preventDefault();
+        const statusDiv = document.getElementById("authStatusMsg");
+        const idVal = document.getElementById("inputIdentifier").value;
+        statusDiv.style.display = "block";
+
+        if (currentRole === "patient") {
+          statusDiv.innerHTML = `
+          <div style="background: var(--cyan-50); border: 1px solid var(--cyan-400); padding: 18px; border-radius: 12px; color: var(--navy-900);">
+            <div style="font-weight: 700; color: var(--cyan-600); margin-bottom: 4px;">✅ Patient Authentication Successful!</div>
+            <p style="font-size: 0.86rem; margin: 0;">Welcome back! Redirecting to your personal health records and active appointment status...</p>
+          </div>
+        `;
+          setTimeout(() => {
+            window.location.href = "patient-portal.html";
+          }, 1200);
+        } else if (currentRole === "staff") {
+          statusDiv.innerHTML = `
+          <div style="background: #e0f2fe; border: 1px solid #0284c7; padding: 18px; border-radius: 12px; color: var(--navy-900);">
+            <div style="font-weight: 700; color: #0284c7; margin-bottom: 4px;">👨‍⚕️ Staff & OPD Console Authorized!</div>
+            <p style="font-size: 0.86rem; margin: 0;">Verified Credentials for <b>${idVal}</b>. OPD Live Token Queue loaded: 14 active consultations scheduled today.</p>
+          </div>
+        `;
+        } else if (currentRole === "admin") {
+          statusDiv.innerHTML = `
+          <div style="background: var(--coral-50); border: 1px solid var(--coral-500); padding: 18px; border-radius: 12px; color: var(--navy-900);">
+            <div style="font-weight: 700; color: var(--coral-600); margin-bottom: 4px;">🛡️ Administrator Access Granted</div>
+            <p style="font-size: 0.86rem; margin: 0;">Master Control active. Hospital Bed Occupancy: 84% | Active ICU Beds: 6 | ER Status: Normal.</p>
+          </div>
+        `;
+        }
+      }
+    </script>
+    <script src="js/language.js"></script>
+  </body>
+</html>

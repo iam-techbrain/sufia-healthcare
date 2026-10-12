@@ -1,0 +1,33 @@
+RewriteEngine On
+RewriteBase /
+
+# 1. Redirect /careers.php to clean URL /careers
+RewriteCond %{REQUEST_METHOD} !POST
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s/+careers\.php[\s?] [NC]
+RewriteRule ^careers\.php$ careers [R=301,L]
+
+# 2. Redirect /career-success.php to /career-success
+RewriteCond %{REQUEST_METHOD} !POST
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s/+career-success\.php[\s?] [NC]
+RewriteRule ^career-success\.php$ career-success [R=301,L]
+
+# 3. Route /careers to careers.php
+RewriteRule ^careers/?$ careers.php [L,QSA]
+
+# 4. Route /career-success to career-success.php
+RewriteRule ^career-success/?$ career-success.php [L,QSA]
+
+# 5. General rule: rewrite extensionless URLs to .php files
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^([^/]+)/?$ $1.php [L,QSA]
+
+# 6. General rule: rewrite extensionless URLs to .html files
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^([^/]+)/?$ $1.html [L,QSA]
+
+# Security: Block direct access to database and sensitive files
+<FilesMatch "\.(sqlite|sqlite3|db|sql|env|log)$">
+    Require all denied
+</FilesMatch>

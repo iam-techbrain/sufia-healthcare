@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Keep authentication and private portal pages out of search results
+Disallow: /login.html
+Disallow: /patient-portal.html
+
+Sitemap: https://sufiahealthcare.in/sitemap.xml

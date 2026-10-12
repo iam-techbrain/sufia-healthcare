@@ -1,0 +1,34 @@
+RewriteEngine On
+RewriteBase /
+
+# 1. Redirect /index.html or /index.php to root /
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s/+index(\.html|\.php)?[\s?] [NC]
+RewriteRule ^index(\.html|\.php)?$ / [R=301,L]
+
+# 2. Remove .html extension from URL (e.g. /doctors.html -> /doctors)
+RewriteCond %{REQUEST_METHOD} !POST
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s/+((?!admin/).*?)\.html[\s?] [NC]
+RewriteRule ^(.*?)\.html$ /$1 [R=301,L]
+
+# 3. Remove .php extension from URL (e.g. /careers.php -> /careers)
+RewriteCond %{REQUEST_METHOD} !POST
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s/+((?!admin|contact-submit|404|router).*?)\.php[\s?] [NC]
+RewriteRule ^(.*?)\.php$ /$1 [R=301,L]
+
+# 4. Internally route extensionless URL to .html if file exists
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.*?)/?$ $1.html [L,QSA]
+
+# 5. Internally route extensionless URL to .php if file exists
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^(.*?)/?$ $1.php [L,QSA]
+
+# 6. Security: Block direct access to database and sensitive files
+<FilesMatch "\.(sqlite|sqlite3|db|sql|env|log)$">
+    Require all denied
+</FilesMatch>
+
+# 7. Custom 404 Error Page
+ErrorDocument 404 /404.php

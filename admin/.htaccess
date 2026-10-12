@@ -1,0 +1,29 @@
+# Block direct public download of SQLite database file
+<Files "*.sqlite">
+    Order allow,deny
+    Deny from all
+</Files>
+
+<Files "database.sqlite">
+    Order allow,deny
+    Deny from all
+</Files>
+
+# Apache 2.4+ compatibility
+<IfModule mod_authz_core.c>
+    <Files "*.sqlite">
+        Require all denied
+    </Files>
+</IfModule>
+
+# Enable directory index to prioritize index.php
+DirectoryIndex index.php index.html
+
+# Route HTML page requests directly to PHP counterparts
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^index\.html$ index.php [L,QSA]
+    RewriteRule ^career_enquiries\.html$ career_enquiries.php [L,QSA]
+    RewriteRule ^contact_enquiries\.html$ contact_enquiries.php [L,QSA]
+    RewriteRule ^carrer_enquery\.html$ career_enquiries.php [L,QSA]
+</IfModule>

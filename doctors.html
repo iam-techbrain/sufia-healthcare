@@ -1,0 +1,1096 @@
+<!doctype html>
+<html lang="en">
+<!-- <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Find a Doctor | Sufia Healthcare</title>
+    <link rel="stylesheet" href="css/premium.css" />
+    <link rel="icon" type="image/svg+xml" href="assets/img/favicon.ico" /> -->
+
+<head>
+  <meta charset="UTF-8" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary SEO -->
+  <title>Best Doctor Multispeciality Hospital in Siwan | SUFIA Healthcare</title>
+
+  <meta name="description"
+    content="SUFIA Healthcare is a multispeciality hospital in Siwan, Bihar, providing specialist doctors, advanced medical facilities, emergency care and online appointment booking." />
+
+  <meta name="keywords"
+    content="best hospital in Siwan, multispeciality hospital in Siwan, SUFIA Healthcare, doctors in Siwan, emergency hospital Siwan, hospital in Bihar, book doctor appointment Siwan" />
+
+  <meta name="author" content="SUFIA Healthcare" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta name="googlebot" content="index, follow, max-image-preview:large" />
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://sufiahealthcare.in/" />
+
+  <!-- Language and Location -->
+  <meta http-equiv="content-language" content="en-IN" />
+  <meta name="geo.region" content="IN-BR" />
+  <meta name="geo.placename" content="Siwan, Bihar" />
+
+  <!-- Open Graph: Facebook, LinkedIn and WhatsApp -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="SUFIA Healthcare" />
+
+  <meta property="og:title" content="Best Multispeciality Hospital in Siwan | SUFIA Healthcare" />
+
+  <meta property="og:description"
+    content="Find specialist doctors, explore advanced medical facilities and book appointments online at SUFIA Healthcare, Siwan." />
+
+  <meta property="og:url" content="https://sufiahealthcare.in/" />
+
+  <meta property="og:image" content="https://sufiahealthcare.in/assets/img/sufia-healthcare-og.jpg" />
+
+  <meta property="og:image:alt" content="SUFIA Healthcare Multispeciality Hospital in Siwan" />
+
+  <meta property="og:locale" content="en_IN" />
+
+  <!-- X / Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <meta name="twitter:title" content="Best Multispeciality Hospital in Siwan | SUFIA Healthcare" />
+
+  <meta name="twitter:description"
+    content="Specialist doctors, advanced healthcare facilities, emergency care and online appointment booking in Siwan." />
+
+  <meta name="twitter:image" content="https://sufiahealthcare.in/assets/img/sufia-healthcare-og.jpg" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/premium.css" />
+
+  <!-- Hospital Structured Data -->
+  <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Hospital",
+        "@id": "https://sufiahealthcare.in/#hospital",
+        "name": "SUFIA Healthcare",
+        "url": "https://sufiahealthcare.in/",
+        "logo": "https://sufiahealthcare.in/assets/img/logo.png",
+        "image": "https://sufiahealthcare.in/assets/img/sufia-healthcare-og.jpg",
+        "description": "SUFIA Healthcare is a multispeciality hospital in Siwan, Bihar, offering specialist consultations, advanced medical facilities, emergency care and online appointment booking.",
+        "telephone": "+91-9155099836",
+        "email": "info@sufiahealthcare.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Hussaini More, Bindusar",
+          "addressLocality": "Siwan",
+          "addressRegion": "Bihar",
+          "postalCode": "841277",
+          "addressCountry": "IN"
+        },
+        "areaServed": {
+          "@type": "City",
+          "name": "Siwan"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+91-9155099836",
+          "contactType": "appointments",
+          "areaServed": "IN",
+          "availableLanguage": ["English", "Hindi"]
+        },
+        "sameAs": []
+      }
+    </script>
+  <style>
+    .filters-bar {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      padding: 20px 22px;
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 34px;
+    }
+
+    .filters-row {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .filters-row select {
+      border: 1.5px solid var(--line);
+      border-radius: var(--radius-pill);
+      padding: 10px 16px;
+      font-size: 0.86rem;
+      color: var(--ink-soft);
+      background: var(--mist);
+      font-family: var(--font-body);
+      max-width: 100%;
+    }
+
+    .results-layout {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+
+    .listing-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      padding: 22px;
+      display: grid;
+      grid-template-columns: 96px minmax(0, 1fr) auto;
+      gap: 22px;
+      align-items: center;
+      transition: 0.25s;
+      width: 100%;
+    }
+
+    .listing-card:hover {
+      box-shadow: var(--shadow-md);
+      border-color: transparent;
+    }
+
+    .listing-avatar {
+      width: 96px;
+      height: 96px;
+      border-radius: 16px;
+      overflow: hidden;
+      flex: none;
+    }
+
+    .listing-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .listing-info {
+      min-width: 0;
+    }
+
+    .listing-info .dc-name {
+      font-size: 1.1rem;
+      line-height: 1.35;
+    }
+
+    .listing-meta {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
+    .listing-meta span {
+      font-size: 0.8rem;
+      color: var(--ink-soft);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .listing-actions {
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+      align-items: center;
+      justify-content: flex-end;
+      white-space: nowrap;
+      flex-wrap: nowrap;
+    }
+
+    .listing-actions .slot-btn {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--cyan-600);
+      background: var(--cyan-50);
+      padding: 8px 14px;
+      border-radius: var(--radius-pill);
+      white-space: nowrap;
+    }
+
+    /* =========================
+     LARGE DESKTOP
+     1400px+
+  ========================== */
+    @media (min-width: 1400px) {
+      .listing-card {
+        padding: 26px;
+        gap: 26px;
+      }
+
+      .listing-avatar {
+        width: 105px;
+        height: 105px;
+      }
+
+      .listing-info .dc-name {
+        font-size: 1.18rem;
+      }
+    }
+
+    /* =========================
+     LAPTOP / SMALL DESKTOP
+     992px - 1199px
+  ========================== */
+    @media (max-width: 1199px) {
+      .listing-card {
+        grid-template-columns: 88px minmax(0, 1fr) auto;
+        gap: 18px;
+        padding: 20px;
+      }
+
+      .listing-avatar {
+        width: 88px;
+        height: 88px;
+      }
+
+      .listing-actions {
+        min-width: 165px;
+      }
+    }
+
+    /* =========================
+     TABLET
+     768px - 991px
+  ========================== */
+    @media (max-width: 991px) {
+      .filters-bar {
+        padding: 18px;
+        margin-bottom: 26px;
+      }
+
+      .filters-row {
+        gap: 10px;
+      }
+
+      .filters-row select {
+        flex: 1 1 calc(50% - 10px);
+        min-width: 180px;
+      }
+
+      .listing-card {
+        grid-template-columns: 80px minmax(0, 1fr);
+        gap: 16px;
+        padding: 18px;
+        align-items: start;
+      }
+
+      .listing-avatar {
+        width: 80px;
+        height: 80px;
+        border-radius: 14px;
+      }
+
+      .listing-info .dc-name {
+        font-size: 1.05rem;
+      }
+
+      .listing-meta {
+        gap: 8px 12px;
+        margin-top: 8px;
+      }
+
+      .listing-actions {
+        grid-column: 1 / -1;
+        width: 100%;
+        min-width: 0;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        margin-top: 5px;
+      }
+    }
+
+    /* =========================
+     MOBILE
+     481px - 767px
+  ========================== */
+    @media (max-width: 767px) {
+      .filters-bar {
+        padding: 14px;
+        margin-bottom: 22px;
+        border-radius: 14px;
+      }
+
+      .filters-row {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+
+      .filters-row select {
+        width: 100%;
+        min-width: 0;
+        padding: 11px 14px;
+        font-size: 0.84rem;
+      }
+
+      .results-layout {
+        gap: 14px;
+      }
+
+      .listing-card {
+        grid-template-columns: 68px minmax(0, 1fr);
+        gap: 14px;
+        padding: 16px;
+      }
+
+      .listing-avatar {
+        width: 68px;
+        height: 68px;
+        border-radius: 12px;
+      }
+
+      .listing-info .dc-name {
+        font-size: 1rem;
+      }
+
+      .listing-meta {
+        gap: 6px 10px;
+      }
+
+      .listing-meta span {
+        font-size: 0.75rem;
+      }
+
+      .listing-actions {
+        grid-column: 1 / -1;
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+        margin-top: 6px;
+      }
+
+      .listing-actions .slot-btn {
+        font-size: 0.73rem;
+        padding: 7px 11px;
+      }
+    }
+
+    /* =========================
+     SMALL MOBILE
+     480px and below
+  ========================== */
+    @media (max-width: 480px) {
+      .filters-bar {
+        padding: 12px;
+        margin-bottom: 18px;
+      }
+
+      .listing-card {
+        grid-template-columns: 58px minmax(0, 1fr);
+        gap: 11px;
+        padding: 13px;
+        border-radius: 14px;
+      }
+
+      .listing-avatar {
+        width: 58px;
+        height: 58px;
+        border-radius: 10px;
+      }
+
+      .listing-info .dc-name {
+        font-size: 0.95rem;
+      }
+
+      .listing-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+        margin-top: 6px;
+      }
+
+      .listing-meta span {
+        font-size: 0.72rem;
+      }
+
+      .listing-actions {
+        flex-direction: row;
+        align-items: center;
+        gap: 8px;
+        width: 100%;
+      }
+
+      .listing-actions > * {
+        flex: 1;
+        text-align: center;
+        justify-content: center;
+      }
+
+      .listing-actions .slot-btn {
+        width: 100%;
+        text-align: center;
+        padding: 9px 10px;
+      }
+    }
+
+    /* =========================
+     VERY SMALL MOBILE
+  ========================== */
+    @media (max-width: 360px) {
+      .listing-card {
+        grid-template-columns: 50px minmax(0, 1fr);
+        padding: 11px;
+        gap: 9px;
+      }
+
+      .listing-avatar {
+        width: 50px;
+        height: 50px;
+      }
+
+      .listing-info .dc-name {
+        font-size: 0.9rem;
+      }
+
+      .listing-meta span {
+        font-size: 0.68rem;
+      }
+    }
+
+    /* Doctor Card Action Buttons - Identical Sizing & Premium Styling */
+    .btn-doc-action {
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      width: 124px !important;
+      min-width: 124px !important;
+      height: 38px !important;
+      padding: 0 12px !important;
+      font-size: 0.85rem !important;
+      font-weight: 600 !important;
+      font-family: inherit !important;
+      border-radius: 50px !important;
+      text-decoration: none !important;
+      cursor: pointer !important;
+      box-sizing: border-box !important;
+      line-height: 1 !important;
+      text-align: center !important;
+      white-space: nowrap !important;
+      transition: all 0.25s ease !important;
+    }
+
+    .btn-doc-action.btn-doc-primary {
+      background: var(--cyan-500) !important;
+      color: #ffffff !important;
+      border: 1.5px solid var(--cyan-500) !important;
+      box-shadow: 0 3px 10px rgba(14, 171, 163, 0.22) !important;
+    }
+
+    .btn-doc-action.btn-doc-primary:hover {
+      background: var(--cyan-600) !important;
+      border-color: var(--cyan-600) !important;
+      color: #ffffff !important;
+      transform: translateY(-2px) !important;
+      box-shadow: 0 6px 16px rgba(14, 171, 163, 0.32) !important;
+    }
+
+    .btn-doc-action.btn-doc-outline,
+    .btn-view-profile {
+      background: #ffffff !important;
+      color: var(--cyan-700) !important;
+      border: 1.5px solid var(--cyan-500) !important;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04) !important;
+    }
+
+    .btn-doc-action.btn-doc-outline:hover,
+    .btn-doc-action.btn-doc-outline:focus,
+    .btn-view-profile:hover,
+    .btn-view-profile:focus {
+      background: var(--cyan-500) !important;
+      border-color: var(--cyan-500) !important;
+      color: #ffffff !important;
+      transform: translateY(-2px) !important;
+      box-shadow: 0 6px 16px rgba(14, 171, 163, 0.3) !important;
+    }
+
+    @media (max-width: 480px) {
+      .btn-doc-action {
+        width: 100% !important;
+        min-width: 0 !important;
+        flex: 1 1 0 !important;
+      }
+    }
+
+    /* =========================
+         DOCTOR PROFILE MODAL
+      ========================== */
+    .doc-modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(7, 26, 46, 0.76);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      z-index: 99999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+
+    .doc-modal-overlay.active {
+      display: flex;
+      opacity: 1;
+    }
+
+    .doc-modal-box {
+      background: #ffffff;
+      border-radius: 20px;
+      max-width: 620px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      border: 1px solid var(--line);
+      box-shadow: 0 25px 60px rgba(7, 26, 46, 0.4);
+      position: relative;
+      transform: translateY(20px) scale(0.97);
+      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .doc-modal-overlay.active .doc-modal-box {
+      transform: translateY(0) scale(1);
+    }
+
+    .doc-modal-close {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: #f1f5f9;
+      border: none;
+      font-size: 1.5rem;
+      line-height: 1;
+      color: #475569;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: 0.2s ease;
+      z-index: 2;
+    }
+
+    .doc-modal-close:hover {
+      background: #e2e8f0;
+      color: #0f172a;
+    }
+
+    .doc-modal-header {
+      padding: 30px 30px 22px;
+      background: linear-gradient(135deg, #f8fafc 0%, #edf8f8 100%);
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      gap: 22px;
+      align-items: center;
+      border-radius: 20px 20px 0 0;
+    }
+
+    .doc-modal-photo {
+      width: 110px;
+      height: 110px;
+      border-radius: 18px;
+      object-fit: cover;
+      border: 3px solid #ffffff;
+      box-shadow: 0 8px 20px rgba(14, 171, 163, 0.25);
+      flex-shrink: 0;
+    }
+
+    .doc-modal-body {
+      padding: 24px 30px;
+    }
+
+    .doc-modal-footer {
+      padding: 18px 30px 24px;
+      background: #f8fafc;
+      border-top: 1px solid var(--line);
+      border-radius: 0 0 20px 20px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 580px) {
+      .doc-modal-header {
+        flex-direction: column;
+        text-align: center;
+        padding: 24px 20px;
+      }
+
+      .doc-modal-photo {
+        width: 90px;
+        height: 90px;
+      }
+
+      .doc-modal-body,
+      .doc-modal-footer {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      .doc-modal-footer {
+        flex-direction: column;
+      }
+
+      .doc-modal-footer .btn {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+      }
+    }
+  </style>
+
+  <!-- Google Tag Manager -->
+  <script>
+    (function (w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+      var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s),
+        dl = l != "dataLayer" ? "&l=" + l : "";
+      j.async = true;
+      j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, "script", "dataLayer", "GTM-MQR9J36D");
+  </script>
+</head>
+
+<body class="sf">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MQR9J36D" height="0" width="0"
+      style="display: none; visibility: hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <!-- Header loaded dynamically -->
+  <div id="site-header"></div>
+
+  <!-- ================= PAGE HERO ================= -->
+  <section class="page-hero">
+    <div class="wrap text-center">
+      <span class="eyebrow" style="background: rgba(14, 171, 163, 0.2); color: var(--cyan-400)">VERIFIED SPECIALISTS ·
+        22+ DEPARTMENTS</span>
+      <h1>Find the Right Specialist Doctor</h1>
+      <p class="lead">
+        Consult 50+ experienced doctors and super specialists in Siwan. Check real-time OPD availability, clinical
+        specialities, and book appointments instantly.
+      </p>
+      <div class="hero-feature-chips">
+        <span class="hero-chip">👨‍⚕️ 50+ Senior Consultants</span>
+        <span class="hero-chip">⚡ Same-Day OPD Slots</span>
+        <span class="hero-chip">🏥 In-Hospital &amp; Emergency OPD</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="sf-section tight on-mist" style="padding-top: 36px;">
+    <div class="wrap">
+
+      <div class="filters-bar" style="margin-top: 24px">
+        <div class="filters-row" style="align-items: stretch;">
+          <div class="search-field" style="flex: 1; min-width: 280px; padding: 6px 14px 6px 18px;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0eaba3" stroke-width="2">
+              <circle cx="11" cy="11" r="7" />
+              <path d="m21 21-4.3-4.3" />
+            </svg>
+            <input type="text" id="docSearch"
+              placeholder="Search doctors by name, speciality, or department (e.g. Surgery, Ortho, Gynaec, Muntazir)..."
+              style="font-size: 0.96rem;" />
+          </div>
+        </div>
+      </div>
+
+      <div style="font-size: 0.88rem; color: var(--slate); margin-bottom: 16px">
+        Showing <strong id="resultCount">6</strong> verified specialists
+      </div>
+
+      <div class="results-layout" id="doctorResults">
+        <!-- Doctor 1: Dr. Mohammed Muntazir -->
+        <div class="listing-card" data-name="Dr. Mohammed Muntazir"
+          data-dept="General Surgery Minimal Access Laparoscopic" data-qual="MBBS, MS · Expert in Laparoscopic Surgery"
+          data-badge="5.0 ★ SENIOR SURGEON" data-img="assets/doctors_img/dr_mohammed_muntazir.jpg"
+          data-speciality="General &amp; Minimal Access Surgery"
+          data-hospital="Sufia Super Speciality Hospital, Siwan, Bihar"
+          data-timing="Monday to Saturday: 8:00 AM – 8:00 PM"
+          data-desc="Specialist in minimally invasive laparoscopic surgeries, hernia repair, gallbladder surgery, appendectomy, GI tract interventions, and emergency abdominal trauma care."
+          style="border-left: 4px solid var(--cyan-500); background: #f8fafc">
+          <div class="listing-avatar">
+            <img src="assets/doctors_img/dr_mohammed_muntazir.jpg" alt="Dr. Mohammed Muntazir"
+              style="object-fit: cover; cursor: pointer;" class="open-modal-trigger" />
+          </div>
+          <div class="listing-info">
+            <div class="dc-name">
+              <span class="open-modal-trigger" style="cursor: pointer;">Dr. Mohammed Muntazir</span>
+              <span class="badge-inline ok" style="
+                    background: var(--cyan-50);
+                    color: var(--cyan-600);
+                    border-color: var(--cyan-400);
+                  ">5.0 ★ SENIOR SURGEON</span>
+            </div>
+            <div style="
+                  color: var(--navy-900);
+                  font-weight: 700;
+                  font-size: 0.9rem;
+                  margin-top: 2px;
+                ">
+              MBBS, MS · Expert in Laparoscopic Surgery
+            </div>
+            <div class="listing-meta">
+              <span>General &amp; Minimal Access Surgery</span>
+              <span>·</span>
+              <span>📍 Sufia Hospital, Siwan, Bihar</span>
+            </div>
+          </div>
+          <div class="listing-actions">
+            <a href="contact.html?doctor=Dr.%20Mohammed%20Muntazir&dept=General%20Surgery"
+              class="btn-doc-action btn-doc-primary">Contact</a>
+            <button type="button" class="btn-doc-action btn-doc-outline open-modal-trigger">View Profile</button>
+          </div>
+        </div>
+
+        <!-- Doctor 2: Dr. Shakil Ahmed -->
+        <div class="listing-card" data-name="Dr. Shakil Ahmed" data-dept="Orthopaedics Ortho Joint Trauma"
+          data-qual="M.S. Ortho · Consultant Orthopaedic Surgeon" data-badge="4.9 ★ ORTHOPAEDIC SPECIALIST"
+          data-img="assets/doctors_img/dr_shakil_admed.jpg" data-speciality="Orthopaedics &amp; Joint Replacement"
+          data-hospital="Sufia Super Speciality Hospital, Siwan, Bihar"
+          data-timing="Monday to Saturday: 9:00 AM – 7:00 PM"
+          data-desc="Specialist in complex fracture reduction, arthritis and joint replacement consultation, spinal alignment, sports injury rehabilitation, and arthroscopic procedures.">
+          <div class="listing-avatar">
+            <img src="assets/doctors_img/dr_shakil_admed.jpg" alt="Dr. Shakil Ahmed" style="cursor: pointer;"
+              class="open-modal-trigger" />
+          </div>
+          <div class="listing-info">
+            <div class="dc-name">
+              <span class="open-modal-trigger" style="cursor: pointer;">Dr. Shakil Ahmed</span>
+              <span class="badge-inline ok">4.9 ★</span>
+            </div>
+            <div style="color: var(--slate); font-size: 0.88rem; margin-top: 2px">
+              M.S. Ortho · Consultant Orthopaedic Surgeon
+            </div>
+            <div class="listing-meta">
+              <span>Orthopaedics &amp; Joint Replacement</span>
+              <span>·</span>
+              <span>📍 Sufia Hospital, Siwan, Bihar</span>
+            </div>
+          </div>
+          <div class="listing-actions">
+            <a href="contact.html?doctor=Dr.%20Shakil%20Ahmed&dept=Orthopaedics" class="btn-doc-action btn-doc-primary">Contact</a>
+            <button type="button" class="btn-doc-action btn-doc-outline open-modal-trigger">View Profile</button>
+          </div>
+        </div>
+
+        <!-- Doctor 3: Dr. Indul -->
+        <div class="listing-card" data-name="Dr. Indul" data-dept="Physician Internal Medicine Critical Care"
+          data-qual="M.D. Physician · Consultant Physician" data-badge="4.8 ★ CONSULTANT PHYSICIAN"
+          data-img="assets/doctors_img/dr_indul.jpg" data-speciality="Internal Medicine &amp; Critical Care"
+          data-hospital="Sufia Super Speciality Hospital, Siwan, Bihar"
+          data-timing="Monday to Saturday: 8:30 AM – 8:00 PM"
+          data-desc="Specialized in internal medicine, management of chronic diabetes, severe hypertension, multi-system infections, seasonal fevers, respiratory ailments, and ICU medical care.">
+          <div class="listing-avatar">
+            <img src="assets/doctors_img/dr_indul.jpg" alt="Dr. Indul" style="cursor: pointer;"
+              class="open-modal-trigger" />
+          </div>
+          <div class="listing-info">
+            <div class="dc-name">
+              <span class="open-modal-trigger" style="cursor: pointer;">Dr. Indul</span>
+              <span class="badge-inline ok">4.8 ★</span>
+            </div>
+            <div style="color: var(--slate); font-size: 0.88rem; margin-top: 2px">
+              M.D. Physician · Consultant General Physician
+            </div>
+            <div class="listing-meta">
+              <span>Internal Medicine &amp; Critical Care</span>
+              <span>·</span>
+              <span>📍 Sufia Hospital, Siwan, Bihar</span>
+            </div>
+          </div>
+          <div class="listing-actions">
+            <a href="contact.html?doctor=Dr.%20Indul&dept=General%20Medicine" class="btn-doc-action btn-doc-primary">Contact</a>
+            <button type="button" class="btn-doc-action btn-doc-outline open-modal-trigger">View Profile</button>
+          </div>
+        </div>
+
+        <!-- Doctor 4: Dr. Shibal Zaheer -->
+        <div class="listing-card" data-name="Dr. Shibal Zaheer" data-dept="Gynaecology Obstetrics Infertility Maternity"
+          data-qual="M.S. Gynaecology · Senior Obstetrician &amp; Gynaecologist"
+          data-badge="5.0 ★ GYNAECOLOGIST &amp; OBSTETRICIAN" data-img="assets/doctors_img/dr_shibal_zaheer.jpg"
+          data-speciality="Obstetrics &amp; Gynaecology" data-hospital="Sufia Super Speciality Hospital, Siwan, Bihar"
+          data-timing="Monday to Saturday: 9:00 AM – 6:30 PM"
+          data-desc="Comprehensive woman healthcare: high-risk antenatal care, safe normal &amp; operative cesarean deliveries, infertility evaluation, and laparoscopic gynaecological surgery.">
+          <div class="listing-avatar">
+            <img src="assets/doctors_img/dr_shibal_zaheer.jpg" alt="Dr. Shibal Zaheer" style="cursor: pointer;"
+              class="open-modal-trigger" />
+          </div>
+          <div class="listing-info">
+            <div class="dc-name">
+              <span class="open-modal-trigger" style="cursor: pointer;">Dr. Shibal Zaheer</span>
+              <span class="badge-inline ok">5.0 ★</span>
+            </div>
+            <div style="color: var(--slate); font-size: 0.88rem; margin-top: 2px">
+              M.S. Gynaecology · Obstetrician &amp; Gynaecologist
+            </div>
+            <div class="listing-meta">
+              <span>Obstetrics &amp; Gynaecology</span>
+              <span>·</span>
+              <span>📍 Sufia Hospital, Siwan, Bihar</span>
+            </div>
+          </div>
+          <div class="listing-actions">
+            <a href="contact.html?doctor=Dr.%20Shibal%20Zaheer&dept=Gynaecology" class="btn-doc-action btn-doc-primary">Contact</a>
+            <button type="button" class="btn-doc-action btn-doc-outline open-modal-trigger">View Profile</button>
+          </div>
+        </div>
+
+        <!-- Doctor 5: Dr. Shashank -->
+        <div class="listing-card" data-name="Dr. Shashank" data-dept="Cardiology Cardiac Heart"
+          data-qual="D.M. Cardiology · Consultant Cardiologist" data-badge="4.7 ★ CARDIOLOGY SPECIALIST"
+          data-img="assets/doctors_img/dr_shashank.jpg" data-speciality="Cardiology &amp; Cardiac Sciences"
+          data-hospital="Sufia Super Speciality Hospital, Siwan, Bihar"
+          data-timing="Monday to Saturday: 10:00 AM – 7:00 PM"
+          data-desc="Expert in clinical and interventional cardiology, heart disease diagnosis, hypertension control, post-infarction care, 2D Echo interpretation, and emergency cardiac triage.">
+          <div class="listing-avatar">
+            <img src="assets/doctors_img/dr_shashank.jpg" alt="Dr. Shashank" style="cursor: pointer;"
+              class="open-modal-trigger" />
+          </div>
+          <div class="listing-info">
+            <div class="dc-name">
+              <span class="open-modal-trigger" style="cursor: pointer;">Dr. Shashank</span>
+              <span class="badge-inline ok">4.7 ★</span>
+            </div>
+            <div style="color: var(--slate); font-size: 0.88rem; margin-top: 2px">
+              D.M. Cardiology · Consultant Cardiologist
+            </div>
+            <div class="listing-meta">
+              <span>Cardiology &amp; Cardiac Sciences</span>
+              <span>·</span>
+              <span>📍 Sufia Hospital, Siwan, Bihar</span>
+            </div>
+          </div>
+          <div class="listing-actions">
+            <a href="contact.html?doctor=Dr.%20Shashank&dept=Cardiology" class="btn-doc-action btn-doc-primary">Contact</a>
+            <button type="button" class="btn-doc-action btn-doc-outline open-modal-trigger">View Profile</button>
+          </div>
+        </div>
+
+        <!-- Doctor 6: Dr. Vedant Raj -->
+        <div class="listing-card" data-name="Dr. Vedant Raj" data-dept="Dental Dentistry Oral Maxillofacial"
+          data-qual="Dental &amp; Maxillofacial Specialist" data-badge="4.6 ★ DENTAL SPECIALIST"
+          data-img="assets/doctors_img/dr_vedant_raj.jpg" data-speciality="Dental Surgery &amp; Oral Health"
+          data-hospital="Sufia Super Speciality Hospital, Siwan, Bihar"
+          data-timing="Monday to Saturday: 9:30 AM – 7:30 PM"
+          data-desc="Specialist in advanced oral healthcare, painless root canal treatment (RCT), crowns &amp; bridges, dental implants, surgical extractions, teeth whitening, and pediatric dental care.">
+          <div class="listing-avatar">
+            <img src="assets/doctors_img/dr_vedant_raj.jpg" alt="Dr. Vedant Raj" style="cursor: pointer;"
+              class="open-modal-trigger" />
+          </div>
+          <div class="listing-info">
+            <div class="dc-name">
+              <span class="open-modal-trigger" style="cursor: pointer;">Dr. Vedant Raj</span>
+              <span class="badge-inline ok">4.6 ★</span>
+            </div>
+            <div style="color: var(--slate); font-size: 0.88rem; margin-top: 2px">
+              Dental &amp; Maxillofacial Specialist
+            </div>
+            <div class="listing-meta">
+              <span>Dental Surgery &amp; Oral Health</span>
+              <span>·</span>
+              <span>📍 Sufia Hospital, Siwan, Bihar</span>
+            </div>
+          </div>
+          <div class="listing-actions">
+            <a href="contact.html?doctor=Dr.%20Vedant%20Raj&dept=Dental" class="btn-doc-action btn-doc-primary">Contact</a>
+            <button type="button" class="btn-doc-action btn-doc-outline open-modal-trigger">View Profile</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="emptyState" style="display: none; text-align: center; padding: 60px 20px">
+        <h3 style="color: var(--navy-900)">No doctors match this search</h3>
+        <p style="color: var(--slate); margin-top: 8px">
+          Try searching for another doctor's name, surgery, ortho, gynaecology, or dental.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= DOCTOR PROFILE MODAL ================= -->
+  <div id="doctorProfileModal" class="doc-modal-overlay" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="doc-modal-box">
+      <button type="button" class="doc-modal-close" id="closeDocModal" aria-label="Close modal">&times;</button>
+
+      <div class="doc-modal-header">
+        <img id="modalDocImg" src="" alt="Doctor Photo" class="doc-modal-photo" />
+        <div>
+          <span id="modalDocBadge" class="badge-inline ok"
+            style="background: var(--cyan-50); color: var(--cyan-700); border-color: var(--cyan-300); margin-bottom: 6px;"></span>
+          <h3 id="modalDocName"
+            style="font-size: 1.45rem; color: var(--navy-950); margin: 0 0 4px; font-family: var(--font-display, 'Fraunces', Georgia, serif);">
+          </h3>
+          <div id="modalDocQual" style="font-size: 0.9rem; color: var(--slate); font-weight: 600;"></div>
+          <div id="modalDocDept" style="font-size: 0.85rem; color: var(--cyan-700); font-weight: 700; margin-top: 4px;">
+          </div>
+        </div>
+      </div>
+
+      <div class="doc-modal-body">
+        <div style="display: grid; gap: 16px;">
+          <div
+            style="background: var(--mist, #f5f8fa); padding: 14px 18px; border-radius: 12px; border: 1px solid var(--line, #e3e9ef);">
+            <div
+              style="font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--cyan-700); font-weight: 700; margin-bottom: 4px;">
+              Hospital Campus &amp; Location</div>
+            <div style="font-size: 0.92rem; font-weight: 600; color: var(--navy-950);">
+              🏥 Sufia Super Speciality Hospital
+            </div>
+            <div style="font-size: 0.84rem; color: var(--slate); margin-top: 2px;">
+              Hussaini More, Bindusar, Siwan, Bihar - 841227
+            </div>
+          </div>
+
+          <div
+            style="background: #fff; padding: 13px 18px; border-radius: 12px; border: 1px solid var(--line, #e3e9ef); display: flex; align-items: center; justify-content: space-between;">
+            <div style="font-size: 0.82rem; font-weight: 700; color: var(--coral-600);">🚨 Emergency &amp; Critical Care
+            </div>
+            <div style="font-size: 0.84rem; font-weight: 600; color: var(--coral-700);">24×7 On-Call Available</div>
+          </div>
+
+          <div>
+            <div
+              style="font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--slate); font-weight: 700; margin-bottom: 6px;">
+              Clinical Focus &amp; Speciality</div>
+            <p id="modalDocDesc" style="font-size: 0.9rem; color: var(--slate); line-height: 1.65; margin: 0;"></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="doc-modal-footer">
+        <a id="modalCallBtn" href="tel:+917091841444" class="btn btn-coral"
+          style="flex: 1; padding: 12px 18px; text-align: center; justify-content: center;">
+          📞 Call Hospital: +91 70918 41444
+        </a>
+        <a id="modalContactBtn" href="contact.html" class="btn btn-cyan"
+          style="flex: 1; padding: 12px 18px; text-align: center; justify-content: center;">
+          📅 Contact This Doctor Online
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer loaded dynamically -->
+  <div id="site-footer"></div>
+
+  <script>
+    // Live Instant Doctor Search
+    const docSearch = document.getElementById("docSearch");
+    const resultCount = document.getElementById("resultCount");
+    const emptyState = document.getElementById("emptyState");
+    const cards = document.querySelectorAll(".listing-card");
+
+    function filterDoctors() {
+      const query = (docSearch.value || "").toLowerCase().trim();
+      let visibleCount = 0;
+
+      cards.forEach((card) => {
+        const name = (card.dataset.name || "").toLowerCase();
+        const dept = (card.dataset.dept || "").toLowerCase();
+        const qual = (card.dataset.qual || "").toLowerCase();
+
+        const matches = !query || name.includes(query) || dept.includes(query) || qual.includes(query);
+        card.style.display = matches ? "" : "none";
+        if (matches) visibleCount++;
+      });
+
+      if (resultCount) resultCount.textContent = visibleCount;
+      if (emptyState) emptyState.style.display = visibleCount === 0 ? "block" : "none";
+    }
+
+    if (docSearch) {
+      docSearch.addEventListener("input", filterDoctors);
+      // Pre-fill query from URL if passed
+      const urlParams = new URLSearchParams(window.location.search);
+      const qParam = urlParams.get("q");
+      if (qParam) {
+        docSearch.value = qParam;
+        filterDoctors();
+      }
+    }
+
+    // Doctor Profile Modal Logic
+    const modal = document.getElementById("doctorProfileModal");
+    const closeModalBtn = document.getElementById("closeDocModal");
+
+    function openDoctorModal(card) {
+      if (!modal || !card) return;
+      document.getElementById("modalDocImg").src = card.dataset.img || "";
+      document.getElementById("modalDocImg").alt = card.dataset.name || "Doctor";
+      document.getElementById("modalDocName").textContent = card.dataset.name || "";
+      document.getElementById("modalDocBadge").textContent = card.dataset.badge || "Verified Specialist";
+      document.getElementById("modalDocQual").textContent = card.dataset.qual || "";
+      document.getElementById("modalDocDept").textContent = card.dataset.speciality || card.dataset.dept || "";
+
+      const timingEl = document.getElementById("modalDocTiming");
+      if (timingEl) {
+        timingEl.textContent = card.dataset.timing || "Mon - Sat: 8:00 AM - 8:00 PM";
+      }
+
+      document.getElementById("modalDocDesc").textContent = card.dataset.desc || "Consultant specialist at Sufia Super Speciality Hospital, Siwan.";
+
+      const contactBtn = document.getElementById("modalContactBtn");
+      if (contactBtn) {
+        contactBtn.href = "contact.html?doctor=" + encodeURIComponent(card.dataset.name || "") + "&dept=" + encodeURIComponent(card.dataset.speciality || "");
+      }
+
+      modal.classList.add("active");
+      modal.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeDoctorModal() {
+      if (!modal) return;
+      modal.classList.remove("active");
+      modal.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+    }
+
+    // Attach click events to all trigger elements in cards
+    cards.forEach((card) => {
+      card.querySelectorAll(".open-modal-trigger").forEach((trigger) => {
+        trigger.addEventListener("click", (e) => {
+          e.preventDefault();
+          openDoctorModal(card);
+        });
+      });
+    });
+
+    if (closeModalBtn) {
+      closeModalBtn.addEventListener("click", closeDoctorModal);
+    }
+
+    if (modal) {
+      modal.addEventListener("click", (e) => {
+        if (e.target === modal) {
+          closeDoctorModal();
+        }
+      });
+    }
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && modal && modal.classList.contains("active")) {
+        closeDoctorModal();
+      }
+    });
+  </script>
+  <script src="js/components.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/language.js"></script>
+</body>
+
+</html>
